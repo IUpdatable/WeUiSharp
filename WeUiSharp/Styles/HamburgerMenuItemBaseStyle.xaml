@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WeUiSharp.Controls"
+                    xmlns:local="clr-namespace:WeUiSharp.Controls">
+    <Style x:Key="HamburgerMenuItemBaseStyle" TargetType="{x:Type controls:HamburgerMenuItemBase}" >
+        <Setter Property="Margin" Value="0 16 0 0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HamburgerMenuItemBase}">
+                    <Border Width="25" Height="25">
+                        <Image x:Name="MenuItemImg" Stretch="Uniform" Source="{Binding MenuItemImgSrc, Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="MenuItemImg" Property="Source" Value="{Binding MenuItemCheckedImgSrc, Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter TargetName="MenuItemImg" Property="Source" Value="{Binding MenuItemMouseOverImgSrc, Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True"/>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="MenuItemImg" Property="Source" Value="{Binding MenuItemCheckedImgSrc, Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="controls:HamburgerMenuItemBase" BasedOn="{StaticResource HamburgerMenuItemBaseStyle}"/>
+</ResourceDictionary>

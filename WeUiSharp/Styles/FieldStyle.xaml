@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WeUiSharp.Controls"
+                    xmlns:enums="clr-namespace:WeUiSharp.Enums"
+                    xmlns:windows="clr-namespace:WeUiSharp.Windows"
+                    xmlns:primitives="clr-namespace:WeUiSharp.Controls.Primitives"
+                    xmlns:local="clr-namespace:WeUiSharp" 
+                    xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:converters="clr-namespace:WeUiSharp.Converters" xmlns:prism="http://prismlibrary.com/">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <BitmapImage x:Key="ICON_FIELD_CLEAR" UriSource="../Resources/Icons/InputClear.png"/>
+            <BitmapImage x:Key="ICON_FIELD_CLEAR_MOUSEOVER" UriSource="../Resources/Icons/InputClear_MouseOver.png"/>
+            <BitmapImage x:Key="ICON_FIELD_CLEAR_PRESSED" UriSource="../Resources/Icons/InputClear_MouseOver.png"/>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="DefaultFieldStyle" TargetType="controls:Field">
+        <Style.Resources>
+            <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
+            <converters:InvertBoolToVisibilityConverter  x:Key="VisibleIfFalseConverter"/>
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        </Style.Resources>
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background"  Value="{DynamicResource Field.Static.Background}" />
+        <Setter Property="Foreground"  Value="{DynamicResource Field.Static.Foreground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Field.Static.Border}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="FontFamily"  Value="{DynamicResource ContentControlThemeFontFamily}" />
+        <Setter Property="FontSize"    Value="{DynamicResource ControlContentThemeFontSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:Field">
+                    <Border Name="FieldBorder" Padding="0"
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="24"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Grid.Column="0" Margin="-2 0 0 0" x:Name="PART_ContentHost" KeyboardNavigation.IsTabStop="True"
+                                           Padding="{TemplateBinding Padding}" Visibility="{TemplateBinding Property=IsPassword, Converter={StaticResource VisibleIfFalseConverter}}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="Center">
+                            </ScrollViewer>
+                            <PasswordBox x:Name="PasswordBox" Grid.Column="0" Margin="-2 0 0 0" Background="Transparent" BorderThickness="0" Padding="{TemplateBinding Padding}"
+                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         KeyboardNavigation.IsTabStop="{TemplateBinding Property=IsPassword}"
+                                         Visibility="{TemplateBinding Property=IsPassword, Converter={StaticResource VisibleIfTrueConverter}}" VerticalContentAlignment="Center">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="PasswordChanged">
+                                        <prism:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=PasswordChangedCommand}" TriggerParameterPath="Source"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </PasswordBox>
+                            <!--Watermark / hint text / placeholder TextBox-->
+                            <!--https://stackoverflow.com/a/21672408-->
+                            <TextBlock x:Name="PlaceholderTextBlock" IsHitTestVisible="False" Text="{TemplateBinding PlaceHolder}" UseLayoutRounding="True" KeyboardNavigation.IsTabStop="False"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                       Margin="0 0 0 -1" SnapsToDevicePixels="True" Visibility="{TemplateBinding Property=IsHasContent, Converter={StaticResource VisibleIfFalseConverter}}"
+                                       Foreground="DarkGray">
+                            </TextBlock>
+                            <controls:IconButton x:Name="ClearBtn" Grid.Column="1" Width="16" Height="16" KeyboardNavigation.IsTabStop="False"
+                                                 HorizontalAlignment="Left" Visibility="{TemplateBinding Property=IsHasContent, Converter={StaticResource VisibleIfTrueConverter}}"
+                                                 StaticIcon="{StaticResource ICON_FIELD_CLEAR}" PressedIcon="{StaticResource ICON_FIELD_CLEAR_PRESSED}"
+                                                 MouseOverIcon="{StaticResource ICON_FIELD_CLEAR_MOUSEOVER}"
+                                Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ClearInputCommand}" 
+                                CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                              />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+                
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="controls:Field" BasedOn="{StaticResource DefaultFieldStyle}"/>
+
+</ResourceDictionary>

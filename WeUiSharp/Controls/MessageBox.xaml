@@ -1,0 +1,46 @@
+﻿<windows:Window x:Class="WeUiSharp.Controls.MessageBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WeUiSharp.Controls"
+             xmlns:controls="clr-namespace:WeUiSharp.Controls"
+             xmlns:windows="clr-namespace:WeUiSharp.Windows"
+             IsTopmostBtnEnable="False"
+             IsMaxBtnEnable="False"
+             IsMinBtnEnable="False" 
+             IsResizeEnable="False"
+             CornerRadius="3"
+             TitleAlign="Left"
+             TitleColor="{StaticResource BrushText3}"
+             BorderThickness="1"
+             Width="380" Height="245"
+             WindowStartupLocation="CenterOwner"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                   Margin="10 10 10 0"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   TextAlignment="Center" TextWrapping="Wrap"  
+                   Text="{Binding Message}">
+            <TextBlock.LayoutTransform>
+                <ScaleTransform ScaleX="1.15" ScaleY="1.15" />
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <controls:Button x:Name="YesButton" Click="YesButton_Click" Content="确定" Width="70" Height="26" IsDefault="True" Margin="0 10 5 0"/>
+            <controls:Button x:Name="CancelButton" Click="CancelButton_Click" Content="取消" Width="70" Height="26" IsDefault="False"  Margin="5 10 10 0"/>
+        </StackPanel>
+    </Grid>
+</windows:Window>

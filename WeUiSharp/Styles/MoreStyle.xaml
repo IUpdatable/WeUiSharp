@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WeUiSharp.Controls"
+                    xmlns:markup="clr-namespace:WeUiSharp.Markup"
+                    xmlns:localization="clr-namespace:WeUiSharp.Localization"
+                    xmlns:props="clr-namespace:WeUiSharp.Properties"
+                    xmlns:local="clr-namespace:WeUiSharp">
+
+    <!--更多按钮的样式-->
+    <Style x:Key="MoreStyle" TargetType="Button">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="14"/>
+        <Setter Property="ToolTip" Value="{markup:Loc MoreButtonToolTip}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Image x:Name="MoreBtnImage" Source="{DynamicResource ICON_MORE}"  />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MoreBtnImage" Property="Source" Value="{DynamicResource ICON_MORE_MOUSEOVER}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="MoreBtnImage" Property="Source" Value="{DynamicResource ICON_MORE_PRESSED}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

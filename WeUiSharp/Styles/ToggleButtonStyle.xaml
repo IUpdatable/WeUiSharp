@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WeUiSharp.Controls"
+                    xmlns:enums="clr-namespace:WeUiSharp.Enums"
+                    xmlns:windows="clr-namespace:WeUiSharp.Windows"
+                    xmlns:primitives="clr-namespace:WeUiSharp.Controls.Primitives"
+                    xmlns:local="clr-namespace:WeUiSharp">
+
+    <Style x:Key="DefaultToggleButton" TargetType="ToggleButton">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="#FF1AAD19"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    
+                    <Border x:Name="ToggleButtonBorder" Width="40" Height="18" CornerRadius="7" Background="{TemplateBinding Background}" BorderThickness="0" Margin="0" Padding="0">
+                        <Border x:Name="ToggleButtonBall" HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="5" 
+                                Width="10" Height="10" Margin="4 0 4 0" Background="White">
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <StopStoryboard  BeginStoryboardName="UnCheckedStoryboard"/>
+                        </EventTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="#FF1AAD19"/>
+                            <Setter TargetName="ToggleButtonBall" Property="HorizontalAlignment" Value="Right"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Background" Value="#FFCBCBCB"/>
+                            <Setter TargetName="ToggleButtonBall" Property="HorizontalAlignment" Value="Left"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="UnCheckedStoryboard">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleButtonBall" Storyboard.TargetProperty="HorizontalAlignment">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.017">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Left</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleButtonBall" Storyboard.TargetProperty="HorizontalAlignment">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Left</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.017">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource DefaultToggleButton}"/>
+    
+</ResourceDictionary>

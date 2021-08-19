@@ -1,0 +1,208 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:m="clr-namespace:WeUiSharp.Markup"
+    xmlns:local="clr-namespace:WeUiSharp">
+
+    <Color x:Key="ColorWhite">#FFFFFFFF</Color>
+    <Color x:Key="ColorBlack">#FF000000</Color>
+    
+    <Color x:Key="ColorGreen0">#FF1AAD19</Color>
+    <Color x:Key="ColorGreen1">#FF129611</Color>
+    <Color x:Key="ColorGreen2">#FF53BF4C</Color>
+    <Color x:Key="ColorGreen3">#FF87D087</Color>
+    <Color x:Key="ColorGreen4">#FF60C191</Color>
+    <Color x:Key="ColorGreen5">#FF58C18A</Color>
+    <Color x:Key="ColorGreen6">#FF4AC17E</Color>
+    <Color x:Key="ColorGreen7">#FF3DCE3D</Color>
+    
+    <Color x:Key="ColorRed0">#CC5353</Color>
+    <Color x:Key="ColorRed1">#AE4747</Color>
+    <Color x:Key="ColorRed2">#fa5151</Color>
+
+    <Color x:Key="ColorMouseOver0">#FFEFEFEF</Color>
+    <Color x:Key="ColorMouseOver1">#FFF1F1F1</Color>
+    <Color x:Key="ColorMouseOver2">#FFF2F2F2</Color>
+    <Color x:Key="ColorMouseOver3">#FFDBDAD9</Color>
+    <Color x:Key="ColorMouseOver4">#FFE2E2E2</Color>
+
+    <Color x:Key="ColorBorder0">#FFE7E7E7</Color>
+    <Color x:Key="ColorBorder1">#29131313</Color>
+    <Color x:Key="ColorBorder2">#FFDBDBDB</Color>
+    <Color x:Key="ColorBorder3">#FFD0D0D0</Color>
+    <Color x:Key="ColorBorder4">#FFEDEDED</Color>
+    <Color x:Key="ColorBorder5">#FFE5E5E5</Color>
+    <Color x:Key="ColorBorder6">#FFDAD9D7</Color>
+    <Color x:Key="ColorBorder7">#FFEAEAEA</Color>
+    <Color x:Key="ColorBorder8">#FFE3E3E3</Color>
+    <Color x:Key="ColorBorder9">#FFA7A7A7</Color>
+    <Color x:Key="ColorBorder10">#FFD1D1D1</Color>
+    
+    <Color x:Key="ColorBgLight0">WhiteSmoke</Color>
+    <Color x:Key="ColorBgLight1">#FFEEEBE9</Color>
+    <Color x:Key="ColorBgLight2">#FFE6E5E5</Color>
+    <Color x:Key="ColorBgLight3">#FFDBD9D8</Color>
+    <Color x:Key="ColorBgLight4">#FFA7A6A4</Color>
+    <Color x:Key="ColorBgLight5">#FFCAC7C6</Color>
+    <Color x:Key="ColorBgLight6">#FFF5F5F5</Color>
+    <Color x:Key="ColorBgLight7">#FFF6F6F5</Color>
+    <Color x:Key="ColorBgLight8">#FFEAEAEA</Color>
+    <Color x:Key="ColorBgLight9">#FFD7D7D7</Color>
+    <Color x:Key="ColorBgLight10">#FFB4B4B4</Color>
+    
+    
+    <Color x:Key="ColorBgDark0">#FF252525</Color>
+
+    <Color x:Key="ColorText0">#FF212121</Color>
+    <Color x:Key="ColorText1">#FFFEFEFE</Color>
+    <Color x:Key="ColorText2">#FF818181</Color>
+    <Color x:Key="ColorText3">#FF999999</Color>
+    <Color x:Key="ColorText4">#FF606060</Color>
+
+    <SolidColorBrush x:Key="BrushWhite" Color="{m:StaticColor ColorWhite}"/>
+
+    <SolidColorBrush x:Key="BrushText0" Color="{m:StaticColor ColorText0}"/>
+    <SolidColorBrush x:Key="BrushText1" Color="{m:StaticColor ColorText1}"/>
+    <SolidColorBrush x:Key="BrushText2" Color="{m:StaticColor ColorText2}"/>
+    <SolidColorBrush x:Key="BrushText3" Color="{m:StaticColor ColorText3}"/>
+    <SolidColorBrush x:Key="BrushText4" Color="{m:StaticColor ColorText4}"/>
+
+    <SolidColorBrush x:Key="BrushRed0" Color="{m:StaticColor ColorRed0}"/>
+    <SolidColorBrush x:Key="BrushRed1" Color="{m:StaticColor ColorRed1}"/>
+    <SolidColorBrush x:Key="BrushRed2" Color="{m:StaticColor ColorRed2}"/>
+    
+    <SolidColorBrush x:Key="BrushGreen0" Color="{m:StaticColor ColorGreen0}"/>
+    <SolidColorBrush x:Key="BrushGreen1" Color="{m:StaticColor ColorGreen1}"/>
+    <SolidColorBrush x:Key="BrushGreen2" Color="{m:StaticColor ColorGreen2}"/>
+
+    <SolidColorBrush x:Key="BrushMouseOver0" Color="{m:StaticColor ColorMouseOver0}"/>
+    <SolidColorBrush x:Key="BrushMouseOver1" Color="{m:StaticColor ColorMouseOver1}"/>
+    <SolidColorBrush x:Key="BrushMouseOver2" Color="{m:StaticColor ColorMouseOver2}"/>
+    <SolidColorBrush x:Key="BrushMouseOver3" Color="{m:StaticColor ColorMouseOver3}"/>
+    <SolidColorBrush x:Key="BrushMouseOver4" Color="{m:StaticColor ColorMouseOver4}"/>
+
+    <SolidColorBrush x:Key="BrushBorder0" Color="{m:StaticColor ColorBorder0}"/>
+    <SolidColorBrush x:Key="BrushBorder1" Color="{m:StaticColor ColorBorder1}"/>
+    <SolidColorBrush x:Key="BrushBorder2" Color="{m:StaticColor ColorBorder2}"/>
+    <SolidColorBrush x:Key="BrushBorder3" Color="{m:StaticColor ColorBorder3}"/>
+    <SolidColorBrush x:Key="BrushBorder4" Color="{m:StaticColor ColorBorder4}"/>
+    <SolidColorBrush x:Key="BrushBorder5" Color="{m:StaticColor ColorBorder5}"/>
+    
+    
+    <SolidColorBrush x:Key="BrushBgLight0"  Color="{m:StaticColor ColorBgLight0}"/>
+    <SolidColorBrush x:Key="BrushBgLight1"  Color="{m:StaticColor ColorBgLight1}"/>
+    <SolidColorBrush x:Key="BrushBgLight2"  Color="{m:StaticColor ColorBgLight2}"/>
+    <SolidColorBrush x:Key="BrushBgLight3"  Color="{m:StaticColor ColorBgLight3}"/>
+    <SolidColorBrush x:Key="BrushBgLight4"  Color="{m:StaticColor ColorBgLight4}"/>
+    <SolidColorBrush x:Key="BrushBgLight5"  Color="{m:StaticColor ColorBgLight5}"/>
+    <SolidColorBrush x:Key="BrushBgLight6"  Color="{m:StaticColor ColorBgLight6}"/>
+    
+    
+    <SolidColorBrush x:Key="BrushBgDark0"   Color="{m:StaticColor ColorBgDark0}"/>
+
+    <!--Window Resources-->
+    <SolidColorBrush x:Key="Window.Static.Border"           Color="{StaticResource ColorBorder1}" />
+    <SolidColorBrush x:Key="Window.Title.Static.Foreground" Color="{StaticResource ColorText3}" />
+    
+    <!-- Button Resources -->
+    <SolidColorBrush x:Key="Button.Static.Background"       Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="Button.Static.Foreground"       Color="{StaticResource ColorText0}" />
+    <SolidColorBrush x:Key="Button.Static.Border"           Color="{StaticResource ColorBorder0}" />
+    <SolidColorBrush x:Key="Button.MouseOver.Background"    Color="{StaticResource ColorMouseOver0}" />
+
+    <SolidColorBrush x:Key="Button.GreenForeground.Static.Background"       Color="{StaticResource ColorBgLight8}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.Static.Foreground"       Color="{StaticResource ColorGreen4}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.Static.Border"           Color="{StaticResource ColorBorder7}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.MouseOver.Background"    Color="{StaticResource ColorBgLight9}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.MouseOver.Foreground"    Color="{StaticResource ColorGreen5}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.Pressed.Background"      Color="{StaticResource ColorBgLight10}" />
+    <SolidColorBrush x:Key="Button.GreenForeground.Pressed.Foreground"      Color="{StaticResource ColorGreen6}" />
+
+    <SolidColorBrush x:Key="Button.GreenHover.Static.Background"       Color="{StaticResource ColorBgLight0}" />
+    <SolidColorBrush x:Key="Button.GreenHover.Static.Foreground"       Color="{StaticResource ColorText4}" />
+    <SolidColorBrush x:Key="Button.GreenHover.Static.Border"           Color="{StaticResource ColorBorder5}" />
+    <SolidColorBrush x:Key="Button.GreenHover.MouseOver.Background"    Color="{StaticResource ColorGreen1}" />
+    <SolidColorBrush x:Key="Button.GreenHover.MouseOver.Foreground"    Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="Button.GreenHover.Pressed.Background"      Color="{StaticResource ColorGreen0}" />
+    <SolidColorBrush x:Key="Button.GreenHover.Pressed.Foreground"      Color="{StaticResource ColorWhite}" />
+
+    <SolidColorBrush x:Key="Button.GreenAll.Static.Background"       Color="{StaticResource ColorGreen0}" />
+    <SolidColorBrush x:Key="Button.GreenAll.Static.Foreground"       Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="Button.GreenAll.Static.Border"           Color="{StaticResource ColorBorder5}" />
+    <SolidColorBrush x:Key="Button.GreenAll.MouseOver.Background"    Color="{StaticResource ColorGreen1}" />
+    <SolidColorBrush x:Key="Button.GreenAll.MouseOver.Foreground"    Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="Button.GreenAll.Pressed.Background"      Color="{StaticResource ColorGreen0}" />
+    <SolidColorBrush x:Key="Button.GreenAll.Pressed.Foreground"      Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="Button.GreenAll.Diable.Background"       Color="{StaticResource ColorGreen3}" />
+    
+    <!-- Common -->
+    <SolidColorBrush x:Key="Control.Static.Foreground"    Color="Black" />
+    
+    <!-- AddButton -->
+    <BitmapImage x:Key="ICON_ADD" UriSource="pack://application:,,,/WeUiSharp;component/Resources/Icons/Add.png"/>
+    <BitmapImage x:Key="ICON_ADD_MOUSEOVER" UriSource="pack://application:,,,/WeUiSharp;component/Resources/Icons/Add_MouseOver.png"/>
+
+    <!-- Badge -->
+    <SolidColorBrush x:Key="Badge.Static.Background"    Color="{StaticResource ColorRed2}" />
+    <SolidColorBrush x:Key="Badge.Static.Foreground"    Color="{StaticResource ColorWhite}" />
+
+    <!-- ContextMenu -->
+    <SolidColorBrush x:Key="ContextMenu.Static.Background"  Color="{StaticResource ColorWhite}"/>
+    <SolidColorBrush x:Key="ContextMenu.Static.Foreground"  Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="ContextMenu.Static.Border"      Color="{StaticResource ColorBorder3}"/>
+    
+    <!-- MenuItem -->
+    <SolidColorBrush x:Key="MenuItem.MouseOver.Background"  Color="{StaticResource ColorMouseOver4}" />
+    
+    <!-- MenuItem Separator -->
+    <SolidColorBrush x:Key="MenuItemSeparator.Static.Background"  Color="{StaticResource ColorBorder4}" />
+    
+    <!-- MessageBox -->
+    <SolidColorBrush x:Key="MessageBox.Static.Background"       Color="{StaticResource ColorBgLight6}" />
+    <SolidColorBrush x:Key="MessageBox.Static.Title.Foreground" Color="{StaticResource ColorText3}"    />
+
+
+    <!-- ListBox -->
+    <SolidColorBrush x:Key="ListBox.Static.Background"  Color="{StaticResource ColorWhite}" />
+    <SolidColorBrush x:Key="ListBox.Static.Foreground"  Color="{StaticResource ColorBlack}" />
+    
+    <!-- SearchBar -->
+    <SolidColorBrush x:Key="SearchBar.Static.Background" Color="{StaticResource ColorBgLight3}"/>
+    <SolidColorBrush x:Key="SearchBar.Static.Foreground" Color="{StaticResource ColorText2}"/>
+    <SolidColorBrush x:Key="SearchBar.Focus.Background"  Color="{StaticResource ColorBgLight7}"/>
+    <SolidColorBrush x:Key="SearchBar.Focus.Foreground"  Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="SearchBar.Focus.Border"      Color="{StaticResource ColorBorder6}"/>
+
+    <!-- Field -->
+    <SolidColorBrush x:Key="Field.Static.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="Field.Static.Foreground" Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="Field.Static.Border"     Color="{StaticResource ColorBorder7}"/>
+
+    <!-- TabControl -->
+    <SolidColorBrush x:Key="TabItem.Static.Foreground"       Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Foreground"     Color="{StaticResource ColorGreen0}"/>
+    <SolidColorBrush x:Key="TabItem.Selected.Border"         Color="{StaticResource ColorGreen7}"/>
+    <SolidColorBrush x:Key="TabControl.Header.Static.Border" Color="{StaticResource ColorBorder8}"/>
+
+    <!-- ComboBox -->
+    <SolidColorBrush x:Key="ComboBox.Static.Foreground" Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Background" Color="{StaticResource ColorWhite}"/>
+    <SolidColorBrush x:Key="ComboBox.Static.Border"     Color="{StaticResource ColorBorder2}"/>
+    <SolidColorBrush x:Key="ComboBox.MouseOver.Border"  Color="{StaticResource ColorBorder9}"/>
+    <SolidColorBrush x:Key="ComboBox.Pressed.Border"    Color="{StaticResource ColorBorder9}"/>
+
+    <SolidColorBrush x:Key="ComboBoxItem.Static.Foreground" Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="ComboBoxItem.Static.Background" Color="{StaticResource ColorWhite}"/>
+    <SolidColorBrush x:Key="ComboBoxItem.Static.Border"     Color="{StaticResource ColorBorder2}"/>
+    <SolidColorBrush x:Key="ComboBoxItem.MouseOver.Background"      Color="{StaticResource ColorMouseOver1}"/>
+    <SolidColorBrush x:Key="ComboBoxItem.Selected.Tick.Foreground"  Color="{StaticResource ColorGreen2}"/>
+
+    <!-- Popup -->
+    <SolidColorBrush x:Key="Popup.Static.Background"  Color="{StaticResource ColorWhite}"/>
+    <SolidColorBrush x:Key="Popup.Static.Foreground"  Color="{StaticResource ColorBlack}"/>
+    <SolidColorBrush x:Key="Popup.Static.Border"      Color="{StaticResource ColorBorder10}"/>
+    
+    
+    <Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}" BasedOn="{StaticResource HighVisibilityFocusVisual}" />
+    
+</ResourceDictionary>

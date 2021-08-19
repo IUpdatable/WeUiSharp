@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WeUiSharp.Controls"
+                    xmlns:primitives="clr-namespace:WeUiSharp.Controls.Primitives"
+                    xmlns:local="clr-namespace:WeUiSharp">
+    <Style x:Key="{x:Type controls:AddButton}" TargetType="{x:Type controls:AddButton}">
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:AddButton}">
+                    <Image x:Name="TopBtnImage" Source="{DynamicResource ICON_ADD}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="TopBtnImage" Property="Source" Value="{DynamicResource ICON_ADD_MOUSEOVER}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

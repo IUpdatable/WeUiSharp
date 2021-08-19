@@ -1,0 +1,31 @@
+﻿<wec:DocumentBase x:Class="WeHistorian.Modules.Accounts.Views.ArticleListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WeUiSharp.Demo.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:vm="clr-namespace:WeUiSharp.Demo.ViewModels"
+             xmlns:wec="https://github.com/IUpdatable/WeUiSharp"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Title="{Binding Title}">
+    <wec:DocumentBase.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WeHistorian.Controls;component/Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </wec:DocumentBase.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0">
+            <TextBlock Text="{Binding Title}" Background="Blue" Width="100" Height="60" Canvas.Left="189" Canvas.Top="173"/>
+        </Canvas>
+    </Grid>
+    
+</wec:DocumentBase>
