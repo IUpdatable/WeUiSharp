@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeUiSharp", "WeUiSharp\WeUi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeUiSharp.Demo", "WeUiSharp.Demo\WeUiSharp.Demo.csproj", "{5981E750-9AA5-4D1F-85DB-19DE789AE577}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B8B80348-EA27-4382-AA6D-959D699D6BA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{80012983-AD42-446D-AC37-461B456EBB21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{843053B2-DD54-40C3-B87D-148BD0F9C0AC} = {B8B80348-EA27-4382-AA6D-959D699D6BA1}
+		{80012983-AD42-446D-AC37-461B456EBB21} = {B8B80348-EA27-4382-AA6D-959D699D6BA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6EB1CBC-7678-403D-BFF2-35ABEC40A682}
