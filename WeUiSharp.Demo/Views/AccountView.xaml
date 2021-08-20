@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="WeHistorian.Modules.Accounts.Views.AccountView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"
-             xmlns:vm="clr-namespace:WeUiSharp.Demo.Views"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             prism:ViewModelLocator.AutoWireViewModel="True">
-</UserControl>

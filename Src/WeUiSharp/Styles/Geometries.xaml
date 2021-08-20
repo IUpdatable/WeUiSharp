@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WeUiSharp.Styles">
+
+    <Geometry x:Key="NavigateLeftGeometry">m 34.076864,224.70357 46.63853,-46.63853 v 14.29892 l -32.339613,32.33961 32.339613,32.33962 v 14.29891 z</Geometry>
+    <Geometry x:Key="NavigateRightGeometry">m 80.660597,224.70357 -46.63853,-46.63853 v 14.29892 l 32.339613,32.33961 -32.339613,32.33962 v 14.29891 z</Geometry>
+
+    <Geometry x:Key="LeftArrowGeometry">M928 464H247.936L569.984 141.76l-56.56-56.688-418.608 418.56 418.608 418.56 56.56-56.352L247.936 544H928z</Geometry>
+    <Geometry x:Key="RightArrowGeometry">M502.88 85.104l-56.576 56.64L768.352 464H96v80h672.352L446.304 865.824l56.56 56.464 418.624-418.656z</Geometry>
+
+    <Geometry x:Key="DirectLeftGeometry">M286.08 512L736 941.488V82.512L286.08 512zM656 754.512L401.92 512 656 269.488v485.024z</Geometry>
+    <Geometry x:Key="DirectRightGeometry">M288 82.512v858.976L737.92 512 288 82.512z m80 186.976L622.08 512 368 754.512V269.488z</Geometry>
+
+    <Geometry x:Key="AddFriend">M7.832 12.35C7.096 11.478 6.5 9.85 6.5 8.71V7a4 4 0 018 0v1.71c0 1.14-.6 2.773-1.332 3.642l-.361.428c-.59.699-.406 1.588.419 1.99l5.66 2.762c.615.3 1.114 1.093 1.114 1.783v.687a1 1 0 01-1.001.998H2a.998.998 0 01-1-.998v-.687c0-.685.498-1.483 1.114-1.784l5.66-2.762c.821-.4 1.012-1.288.42-1.99l-.362-.429zM2.2 19.8h16.6v-.485c0-.229-.235-.605-.44-.705l-5.66-2.76c-1.527-.745-1.904-2.546-.81-3.843l.36-.428c.552-.654 1.05-2.014 1.05-2.868V7c0-1.545-1.254-2.8-2.8-2.8A2.803 2.803 0 007.7 7v1.71c0 .856.496 2.21 1.05 2.866l.36.429c1.097 1.299.715 3.099-.81 3.843L2.64 18.61c-.203.099-.44.479-.44.705v.485zm16.7-8.9V8h1.2v2.9H23v1.2h-2.9V15h-1.2v-2.9H16v-1.2h2.9z</Geometry>
+    
+    <Geometry x:Key="CheckGeometry">M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z</Geometry>
+    
+    <Geometry x:Key="CloseGeometry">M0.7,0 L5,4.3 L9.3,0 L10,0.7 L5.7,5 L10,9.3 L9.3,10 L5,5.7 L0.7,10 L0,9.3 L4.3,5 L0,0.7 z</Geometry>
+    
+    <Geometry x:Key="DownGeometry">M512 801.6896L5.12 282.0096l58.1632-59.5968L512 682.3936l448.7168-460.0832 58.1632 59.5968-506.88 519.7824z</Geometry>
+    <Geometry x:Key="UpGeometry">M50.000001,0 L100,51.262779 94.262627,57.141584 50.000001,11.767713 5.7373757,57.151686 0,51.27288 z</Geometry>
+</ResourceDictionary>
