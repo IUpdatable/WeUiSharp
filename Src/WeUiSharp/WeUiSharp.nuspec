@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>WeUiSharp</id>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <title>WeUiSharp</title>
     <authors>IUpdatable</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -22,12 +22,13 @@
         <dependency id="Dragablz" version="0.0.3.223" exclude="Build,Analyzers"/>
         <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.31" exclude="Build,Analyzers"/>
         <dependency id="WPFLocalizeExtension" version="3.8.0" exclude="Build,Analyzers"/>
-        <dependency id="XAMLMarkupExtensions" version="2.0.0" exclude="Build,Analyzers"/>
+        <dependency id="XAMLMarkupExtensions" version="2.1.0" exclude="Build,Analyzers"/>
       </group>
     </dependencies>
   </metadata>
   <files>
     <file src="Resources\WeUiSharp.png" target="Resources\" />
+    <file src="bin\Release\WeUiSharp.dll" target="lib\net472\WeUiSharp.dll" />
     <file src="bin\Release\en\WeUiSharp.resources.dll" target="lib\net472\en\WeUiSharp.resources.dll" />
     <file src="bin\Release\zh-CN\WeUiSharp.resources.dll" target="lib\net472\zh-CN\WeUiSharp.resources.dll" />
     <file src="bin\Release\zh-Hant\WeUiSharp.resources.dll" target="lib\net472\zh-Hant\WeUiSharp.resources.dll" />

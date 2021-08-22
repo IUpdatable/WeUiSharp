@@ -1,9 +1,9 @@
-﻿<prism:PrismApplication x:Class="WeUiSharp.Demo.App"
+﻿<Application x:Class="WeUiSharp.HelloWorld.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	         xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:WeUiSharp.HelloWorld" 
              xmlns:weui="https://github.com/IUpdatable/WeUiSharp"
-             xmlns:local="clr-namespace:WeUiSharp.Demo">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,4 +25,4 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
-</prism:PrismApplication>
+</Application>
