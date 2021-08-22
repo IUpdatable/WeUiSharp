@@ -1,0 +1,11 @@
+﻿<weui:Window  xmlns:weui="https://github.com/IUpdatable/WeUiSharp" 
+        x:Class="WeUiSharp.HelloWorldWithPrism.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/" MinHeight="50" MinWidth="200"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525">
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</weui:Window>

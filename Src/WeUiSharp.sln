@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeUiSharp.Demo", "WeUiSharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeUiSharp.HelloWorld", "WeUiSharp.HelloWorld\WeUiSharp.HelloWorld.csproj", "{CA26E528-5BA6-45B5-975A-6D823496D33B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeUiSharp.HelloWorldWithPrism", "WeUiSharp.HelloWorldWithPrism\WeUiSharp.HelloWorldWithPrism.csproj", "{5BE9979B-566D-4597-84F4-B4A6EB075AE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{CA26E528-5BA6-45B5-975A-6D823496D33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA26E528-5BA6-45B5-975A-6D823496D33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA26E528-5BA6-45B5-975A-6D823496D33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE9979B-566D-4597-84F4-B4A6EB075AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE9979B-566D-4597-84F4-B4A6EB075AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE9979B-566D-4597-84F4-B4A6EB075AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE9979B-566D-4597-84F4-B4A6EB075AE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{80012983-AD42-446D-AC37-461B456EBB21} = {B8B80348-EA27-4382-AA6D-959D699D6BA1}
 		{87062573-667A-4596-BD08-C1854385E383} = {80012983-AD42-446D-AC37-461B456EBB21}
 		{CA26E528-5BA6-45B5-975A-6D823496D33B} = {80012983-AD42-446D-AC37-461B456EBB21}
+		{5BE9979B-566D-4597-84F4-B4A6EB075AE8} = {80012983-AD42-446D-AC37-461B456EBB21}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6EB1CBC-7678-403D-BFF2-35ABEC40A682}

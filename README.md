@@ -71,9 +71,11 @@ TODO
 ```
 6. 编译运行，应该就可以看到下面效果的界面：
 
-![Hello Wrorld](https://raw.githubusercontent.com/IUpdatable/IUpdatableResource/master/WeUiSharp/Resources/HelloWeUiSharp.png)
+![Hello Wrorld](https://raw.githubusercontent.com/IUpdatable/WeUiSharp/master/Resources/HelloWeUiSharp.png)
 
-完整代码查看 [WeUiSharp.HelloWorld](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorld)
+完整代码查看：[WeUiSharp.HelloWorld](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorld)
+
+基于 Prism 框架的完整代码 Hello Wrorld 项目查看： [WeUiSharp.HelloWorldWithPrism](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorldWithPrism)
 
 ## Components
 

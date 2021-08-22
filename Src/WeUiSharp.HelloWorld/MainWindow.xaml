@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeUiSharp.HelloWorld"
         mc:Ignorable="d" MinWidth="450" MinHeight="80"
-        Title="Hello WeUiSharp" Height="450" Width="800">
+        Title="Hello WeUiSharp" Height="350" Width="525">
     <Grid>
         
     </Grid>
