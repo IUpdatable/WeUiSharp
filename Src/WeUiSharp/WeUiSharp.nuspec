@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>WeUiSharp</id>
+    <version>1.0.1</version>
+    <title>WeUiSharp</title>
+    <authors>IUpdatable</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>Resources\WeUiSharp.png</icon>
+    <projectUrl>https://github.com/IUpdatable/WeUiSharp</projectUrl>
+    <description>基于 WPF 实现的仿 Windows 桌面版微信 UI 界面库（An unofficial UI library for Windows WeChat based on WPF implementation）</description>
+    <releaseNotes></releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>WPF WeUI WeChat UI</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Prism.Wpf" version="8.1.97" exclude="Build,Analyzers"/>
+        <dependency id="Prism.Core" version="8.1.97" exclude="Build,Analyzers"/>
+        <dependency id="CommonServiceLocator" version="2.0.6" exclude="Build,Analyzers"/>
+        <dependency id="Dragablz" version="0.0.3.223" exclude="Build,Analyzers"/>
+        <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.1.31" exclude="Build,Analyzers"/>
+        <dependency id="WPFLocalizeExtension" version="3.8.0" exclude="Build,Analyzers"/>
+        <dependency id="XAMLMarkupExtensions" version="2.0.0" exclude="Build,Analyzers"/>
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Resources\WeUiSharp.png" target="Resources\" />
+    <file src="bin\Release\en\WeUiSharp.resources.dll" target="lib\net472\en\WeUiSharp.resources.dll" />
+    <file src="bin\Release\zh-CN\WeUiSharp.resources.dll" target="lib\net472\zh-CN\WeUiSharp.resources.dll" />
+    <file src="bin\Release\zh-Hant\WeUiSharp.resources.dll" target="lib\net472\zh-Hant\WeUiSharp.resources.dll" />
+  </files>
+</package>

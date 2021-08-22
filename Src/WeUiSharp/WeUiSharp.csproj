@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<PackageId>WeUiSharp</PackageId>
+		<Version>1.0.1</Version>
+		<Authors>IUpdatable</Authors>
+		<Company>IUpdatable</Company>
+		
+		<ProjectUrl>https://github.com/IUpdatable/WeUiSharp</ProjectUrl>
+		<Description>基于 WPF 实现的仿 Windows 桌面版微信 UI 界面库（An unofficial UI library for Windows WeChat based on WPF implementation）</Description>
+		<license>MIT</license>
+		<LicenseUrl>https://licenses.nuget.org/MIT</LicenseUrl>
+		<Tags>WPF;WeUI;WeChat;UI</Tags>
+		<ApplicationIcon>WeUiSharp.ico</ApplicationIcon>
+	</PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
