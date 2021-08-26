@@ -3,15 +3,14 @@
                     xmlns:controls="clr-namespace:WeUiSharp.Controls"
                     xmlns:local="clr-namespace:WeUiSharp.Styles">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Brushes.xaml" />
-        <ResourceDictionary Source="Geometries.xaml"/>
+        <ResourceDictionary Source="../Resources/Geometries.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="DefaultCheckBoxStyle" TargetType="CheckBox">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BrushBorder2}"/>
-        <Setter Property="Foreground" Value="{StaticResource BrushText0}"/>
+        <Setter Property="Background"  Value="{DynamicResource CheckBox.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource CheckBox.Static.Border}"/>
+        <Setter Property="Foreground"  Value="{DynamicResource CheckBox.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -30,10 +29,10 @@
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}"/>
                         <Grid Grid.Column="0" Height="18" Width="18" x:Name="markGrid">
-                            <Path x:Name="CheckPath" Visibility="Hidden" Data="{StaticResource CheckGeometry}" 
+                            <Path x:Name="CheckPath" Visibility="Hidden" Data="{StaticResource WeUiGeometry_Check}" 
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                   Width="11" Height="8"
-                                  Stretch="UniformToFill" StrokeThickness="0" Fill="{StaticResource BrushGreen2}"/>
+                                  Stretch="UniformToFill" StrokeThickness="0" Fill="{DynamicResource CheckBox.Tick.Foreground}"/>
                         </Grid>
                         <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Visibility="Collapsed" Focusable="False" Content="{TemplateBinding Content}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -45,11 +44,11 @@
                             <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{StaticResource BrushMouseOver2}"/>
+                            <Setter Property="Background" Value="{DynamicResource CheckBox.MouseOver.Background}"/>
                             <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Background" Value="{StaticResource BrushWhite}"/>
+                            <Setter Property="Background" Value="{DynamicResource CheckBox.Checked.Background}"/>
                             <Setter Property="Visibility" TargetName="CheckPath" Value="Visible"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

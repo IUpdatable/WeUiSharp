@@ -1,27 +1,9 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:WeUiSharp">
-    <ResourceDictionary.MergedDictionaries>
-
-        <!--<ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Colors.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Brushes.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Geometries.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Resources/Icons.xaml"/>
-        --><!--<ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ChromeStyle.xaml"/>--><!--
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ButtonStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/MoreStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ButtonBaseStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/HamburgerMenuItemBaseStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/MenuItemSeparatorStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ScrollBarStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/TabControlStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ComboBoxStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ContextMenuStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/CheckBoxStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/DocumentBaseStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ClippingBorder.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/WindowStyle.xaml"/>-->
-    </ResourceDictionary.MergedDictionaries>
+    xmlns:local="clr-namespace:WeUiSharp"
+    xmlns:m="clr-namespace:WeUiSharp.Markup"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
 
 </ResourceDictionary>

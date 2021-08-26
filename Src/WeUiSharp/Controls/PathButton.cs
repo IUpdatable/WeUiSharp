@@ -75,7 +75,6 @@ namespace WeUiSharp.Controls
             set { SetValue(PathProperty, value); }
         }
         public static readonly DependencyProperty PathProperty =
-            DependencyProperty.Register("Path", typeof(Path), typeof(PathButton), new PropertyMetadata(null));
-
+            DependencyProperty.Register(nameof(Path), typeof(Path), typeof(PathButton), new PropertyMetadata(null));
     }
 }

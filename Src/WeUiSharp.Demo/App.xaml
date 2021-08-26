@@ -5,6 +5,7 @@
              xmlns:weui="https://github.com/IUpdatable/WeUiSharp"
              xmlns:local="clr-namespace:WeUiSharp.Demo">
     <Application.Resources>
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/ControlsResources.xaml"/>
@@ -22,6 +23,9 @@
                         </ResourceDictionary>
                     </weui:ThemeResources.ThemeDictionaries>
                 </weui:ThemeResources>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="WeUiGreen" Color="#FF07C160"/>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

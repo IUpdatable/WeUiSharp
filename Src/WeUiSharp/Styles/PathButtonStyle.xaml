@@ -12,7 +12,7 @@
         <Setter Property="MouseOverBackground" Value="LightGray" />
         <Setter Property="PressedForeground" Value="Green" />
         <Setter Property="PressedBackground" Value="LightGray" />
-        <Setter Property="CornerRadius" Value="2" />
+        <!--<Setter Property="CornerRadius" Value="{b}" />-->
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -35,7 +35,8 @@
                               Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path.Margin}" 
                               Stretch="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path.Stretch}" 
                               StrokeThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path.StrokeThickness}"
-                              UseLayoutRounding="True" SnapsToDevicePixels="True"
+                              UseLayoutRounding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path.UseLayoutRounding}" 
+                              SnapsToDevicePixels="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path.SnapsToDevicePixels}"
                               Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground, UpdateSourceTrigger=PropertyChanged}" />
                         
                         <!--<ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Path, Mode=TwoWay}"

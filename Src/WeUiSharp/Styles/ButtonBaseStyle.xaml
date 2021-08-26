@@ -2,16 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WeUiSharp.Controls"
                     xmlns:local="clr-namespace:WeUiSharp.Styles">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Brushes.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="ButtonBase" TargetType="Button">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Background" Value="{StaticResource BrushWhite}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BrushBorder0}"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonBase.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBase.Static.Border}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -22,14 +19,14 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
                             <Setter TargetName="Border" Property="BorderThickness" Value="0" />
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushGreen0}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBase.Default.Background}" />
                         </Trigger>
                         
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMouseOver0}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBase.MouseOver.Background}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource BrushMouseOver0}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBase.Pressed.Background}" />
                             <Setter Property="Opacity" Value="0.4"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">

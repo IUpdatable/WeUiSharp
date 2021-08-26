@@ -43,6 +43,7 @@ namespace WeUiSharp.Models
 
         private void Command_CanExecuteChanged(object sender, EventArgs e)
         {
+            
             if (_Command.CanExecute(null))
             {
                 _Visibility = Visibility.Visible;

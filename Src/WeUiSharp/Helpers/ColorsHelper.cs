@@ -11,7 +11,7 @@ namespace WeUiSharp
     {
         private readonly ResourceDictionary _colors = new ResourceDictionary();
 
-        private Color _systemBackground;
+        private Color _SystemBackground;
 
         private ColorsHelper()
         {
@@ -47,7 +47,7 @@ namespace WeUiSharp
 
         private void UpdateSystemAppTheme()
         {
-            SystemTheme = IsDarkBackground(_systemBackground) ? ApplicationTheme.Dark : ApplicationTheme.Light;
+            SystemTheme = IsDarkBackground(_SystemBackground) ? ApplicationTheme.Dark : ApplicationTheme.Light;
         }
 
         private static bool IsDarkBackground(Color color)

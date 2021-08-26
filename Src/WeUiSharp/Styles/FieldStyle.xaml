@@ -5,13 +5,10 @@
                     xmlns:windows="clr-namespace:WeUiSharp.Windows"
                     xmlns:primitives="clr-namespace:WeUiSharp.Controls.Primitives"
                     xmlns:local="clr-namespace:WeUiSharp" 
-                    xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:converters="clr-namespace:WeUiSharp.Converters" xmlns:prism="http://prismlibrary.com/">
+                    xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:converters="clr-namespace:WeUiSharp.Converters" 
+                    xmlns:prism="http://prismlibrary.com/">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary>
-            <BitmapImage x:Key="ICON_FIELD_CLEAR" UriSource="../Resources/Icons/InputClear.png"/>
-            <BitmapImage x:Key="ICON_FIELD_CLEAR_MOUSEOVER" UriSource="../Resources/Icons/InputClear_MouseOver.png"/>
-            <BitmapImage x:Key="ICON_FIELD_CLEAR_PRESSED" UriSource="../Resources/Icons/InputClear_MouseOver.png"/>
-        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Resources/Geometries.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="DefaultFieldStyle" TargetType="controls:Field">
         <Style.Resources>
@@ -65,13 +62,25 @@
                                        Margin="0 0 0 -1" SnapsToDevicePixels="True" Visibility="{TemplateBinding Property=IsHasContent, Converter={StaticResource VisibleIfFalseConverter}}"
                                        Foreground="DarkGray">
                             </TextBlock>
-                            <controls:IconButton x:Name="ClearBtn" Grid.Column="1" Width="16" Height="16" KeyboardNavigation.IsTabStop="False"
+                            <Grid Grid.Column="1" Width="16" Height="16" KeyboardNavigation.IsTabStop="False" HorizontalAlignment="Left" Visibility="{TemplateBinding Property=IsHasContent, Converter={StaticResource VisibleIfTrueConverter}}">
+                                <controls:PathButton Width="14" Height="14" CornerRadius="8"
+                                      DefaultBackground="#FFCFCFCF" DefaultForeground="#FF969696"
+                                      MouseOverBackground="#FFC5C5C5" MouseOverForeground="#FF909090"
+                                      PressedBackground="#FFC5C5C5" PressedForeground="#FF919191"
+                                      Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ClearInputCommand}" 
+                                      CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <controls:PathButton.Path>
+                                        <Path Stretch="Uniform" Width="7" Height="7" Data="{StaticResource WeUiGeometry_Close}"/>
+                                    </controls:PathButton.Path>
+                                </controls:PathButton>
+                            </Grid>
+                            <!--<controls:IconButton x:Name="ClearBtn" Grid.Column="1" Width="16" Height="16" KeyboardNavigation.IsTabStop="False"
                                                  HorizontalAlignment="Left" Visibility="{TemplateBinding Property=IsHasContent, Converter={StaticResource VisibleIfTrueConverter}}"
                                                  StaticIcon="{StaticResource ICON_FIELD_CLEAR}" PressedIcon="{StaticResource ICON_FIELD_CLEAR_PRESSED}"
                                                  MouseOverIcon="{StaticResource ICON_FIELD_CLEAR_MOUSEOVER}"
                                 Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ClearInputCommand}" 
                                 CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                              />
+                              />-->
                         </Grid>
                     </Border>
                 </ControlTemplate>

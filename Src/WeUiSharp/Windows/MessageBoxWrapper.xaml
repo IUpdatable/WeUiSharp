@@ -58,7 +58,7 @@
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" 
                     Visibility="{Binding MessageBoxButton, Converter={StaticResource EqualToVisibilityConverter}, 
                                     ConverterParameter={x:Static windows:MessageBoxButton.OKCancel}}">
-                <controls:Button Click="YesButton_Click" Content="{markup:Loc MessageBoxButtonOK}" GreenType="All" 
+                <controls:Button Click="OKButton_Click" Content="{markup:Loc MessageBoxButtonOK}" GreenType="All" 
                         FontSize="{DynamicResource ControlContentThemeMediumFontSize}"
                         Width="72" Height="28" IsDefault="True" Margin="0 10 4 1"/>
                 <Button Click="CancelButton_Click" Content="{markup:Loc MessageBoxButtonCancel}" 
@@ -73,7 +73,7 @@
                 <controls:Button Click="YesButton_Click" Content="{markup:Loc MessageBoxButtonYes}" GreenType="All" 
                         FontSize="{DynamicResource ControlContentThemeMediumFontSize}"
                         Width="72" Height="28" IsDefault="True" Margin="0 10 4 1"/>
-                <Button Click="CancelButton_Click" Content="{markup:Loc MessageBoxButtonNo}" 
+                <Button Click="NoButton_Click" Content="{markup:Loc MessageBoxButtonNo}" 
                         FontSize="{DynamicResource ControlContentThemeMediumFontSize}"
                         Width="70" Height="26" IsDefault="False"  Margin="5 10 19 1"/>
             </StackPanel>
@@ -85,7 +85,7 @@
                 <controls:Button Click="YesButton_Click" Content="{markup:Loc MessageBoxButtonYes}" GreenType="All" 
                         FontSize="{DynamicResource ControlContentThemeMediumFontSize}"
                         Width="72" Height="28" IsDefault="True" Margin="0 10 4 1"/>
-                <Button Click="CancelButton_Click" Content="{markup:Loc MessageBoxButtonNo}" 
+                <Button Click="NoButton_Click" Content="{markup:Loc MessageBoxButtonNo}" 
                         FontSize="{DynamicResource ControlContentThemeMediumFontSize}"
                         Width="70" Height="26" IsDefault="False"  Margin="5 10 19 1"/>
                 <Button Click="CancelButton_Click" Content="{markup:Loc MessageBoxButtonCancel}" 
@@ -104,7 +104,7 @@
             <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center"
                     Visibility="{Binding MessageBoxButton, Converter={StaticResource EqualToVisibilityConverter}, 
                                     ConverterParameter={x:Static windows:MessageBoxButton.OK}}">
-                <controls:Button Click="GotItButton_Click" GreenType="All" Width="72" Height="28" Margin="0 1 0 0"
+                <controls:Button Click="OKButton_Click" GreenType="All" Width="72" Height="28" Margin="0 1 0 0"
                         Content="{markup:Loc MessageBoxButtonOK}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </StackPanel>
         </Grid>

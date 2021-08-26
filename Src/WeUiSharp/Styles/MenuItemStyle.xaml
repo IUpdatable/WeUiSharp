@@ -8,11 +8,13 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Height" Value="27"/>
         <Setter Property="Width" Value="Auto"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeMediumFontSize}" />
-        <Setter Property="Command" Value="{Binding Path=Command}" />
+        <!--<Setter Property="Command" Value="{Binding Path=Command}" />
         <Setter Property="Header" Value="{Binding Path=Header, UpdateSourceTrigger=PropertyChanged}" />
-        <Setter Property="Visibility" Value="{Binding Path=Visibility, UpdateSourceTrigger=PropertyChanged}" />
+        <Setter Property="Visibility" Value="{Binding Path=Visibility, UpdateSourceTrigger=PropertyChanged}" />-->
         <!--<Setter Property="CommandParameter" Value="{Binding Path=Parameter}" />-->
         <Setter Property="Template">
             <Setter.Value>
@@ -31,7 +33,9 @@
                         <Trigger Property="IsHighlighted" Value="True">
                             <Setter Property="Background" Value="{DynamicResource MenuItem.MouseOver.Background}"/>
                         </Trigger>
-
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource MenuItem.Disable.Foreground}"/>
+                        </Trigger>
                         <!--<MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsHighlighted" Value="True"/>

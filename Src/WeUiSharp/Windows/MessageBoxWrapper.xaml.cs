@@ -83,13 +83,25 @@ namespace WeUiSharp.Windows
 
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            _Result = WeUiSharp.Windows.MessageBoxResult.OK;
+            _Result = WeUiSharp.Windows.MessageBoxResult.Yes;
             this.Close();
         }
 
         private void GotItButton_Click(object sender, RoutedEventArgs e)
         {
             _Result = WeUiSharp.Windows.MessageBoxResult.GotIt;
+            this.Close();
+        }
+
+        private void NoButton_Click(object sender, RoutedEventArgs e)
+        {
+            _Result = WeUiSharp.Windows.MessageBoxResult.No;
+            this.Close();
+        }
+
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            _Result = WeUiSharp.Windows.MessageBoxResult.OK;
             this.Close();
         }
     }

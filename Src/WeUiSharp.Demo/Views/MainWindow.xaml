@@ -3,9 +3,179 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:weui="https://github.com/IUpdatable/WeUiSharp"
-        prism:ViewModelLocator.AutoWireViewModel="True" MinHeight="50" MinWidth="200"
-        Title="{Binding Title}" Height="350" Width="525">
+        xmlns:utilities="clr-namespace:WeUiSharp.Demo.Utilities" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+        xmlns:viewmodels="clr-namespace:WeUiSharp.Demo.ViewModels" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowViewModel}"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d"
+        prism:ViewModelLocator.AutoWireViewModel="True" Loaded="Window_Loaded"
+        Title="" MinWidth="722" MinHeight="522" Width="800" Height="600">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <prism:InvokeCommandAction Command="{Binding LoadedCommand}" TriggerParameterPath="Source"></prism:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="54"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- 左侧汉堡菜单 -->
+        <Grid Grid.Column="0" Background="#FF2E2E2E" MouseDown="MainMenu_MouseDown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="1">
+                <!--头像-->
+                <weui:ClippingBorder Background="WhiteSmoke" Width="36" Height="36" CornerRadius="3" Cursor="Hand">
+                    <Image Width="25" Height="36" Source="../Resources/WeUiSharp.png"/>
+                </weui:ClippingBorder>
+            </Grid>
+            <!--中间区域-->
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="18"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <!--组件展示-->
+                    <ToggleButton x:Name="ComponentMenuItem" Cursor="Hand" PreviewMouseLeftButtonDown="OnMenuItemPreviewMouseLeftButtonDown">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Checked">
+                                <prism:InvokeCommandAction Command="{Binding SwitchMenuItemCommand}" TriggerParameterPath="Source"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Foreground" Value="{StaticResource WeUiGreen}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid Background="Transparent">
+                                                <Path x:Name="ComponentPath" Stretch="Uniform" Fill="{TemplateBinding Foreground}" Stroke="Gray" StrokeThickness="1" Data="M0.004 0h438.856v438.856H0.004V0z m0 585.144h438.856V1024H0.004V585.144z m585.144 0H1024.004V1024H585.148V585.144z m219.424-146.288C925.764 438.856 1024.004 340.616 1024.004 219.44 1024.004 98.24 925.764 0 804.572 0 683.388 0 585.148 98.24 585.148 219.432c0 121.184 98.24 219.424 219.424 219.424z"/>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter Property="Foreground" Value="{StaticResource WeUiGreen}"/>
+                                                    <Setter TargetName="ComponentPath" Property="StrokeThickness" Value="0"/>
+                                                </Trigger>
+                                                <Trigger Property="IsChecked" Value="False">
+                                                    <Setter Property="Foreground" Value="Transparent"/>
+                                                    <Setter TargetName="ComponentPath" Property="StrokeThickness" Value="1"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ToggleButton.Style>
+                        <weui:PathButton>
+                            <Path Stretch="Uniform" Data="M0.004 0h438.856v438.856H0.004V0z m0 585.144h438.856V1024H0.004V585.144z m585.144 0H1024.004V1024H585.148V585.144z m219.424-146.288C925.764 438.856 1024.004 340.616 1024.004 219.44 1024.004 98.24 925.764 0 804.572 0 683.388 0 585.148 98.24 585.148 219.432c0 121.184 98.24 219.424 219.424 219.424z"/>
+                        </weui:PathButton>
+                    </ToggleButton>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <!--展示其它-->
+                    <ToggleButton x:Name="YourCustomMenuItem" Cursor="Hand" PreviewMouseLeftButtonDown="OnMenuItemPreviewMouseLeftButtonDown">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Checked">
+                                <prism:InvokeCommandAction Command="{Binding SwitchMenuItemCommand}" TriggerParameterPath="Source"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Foreground" Value="{StaticResource WeUiGreen}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid Background="Transparent">
+                                                <Path x:Name="ComponentPath" Stretch="Uniform" Fill="{TemplateBinding Foreground}" Stroke="Gray" StrokeThickness="1" Data="M452.266667 0a131.982222 131.982222 0 0 1 124.302222 175.900444h183.296a87.836444 87.836444 0 0 1 87.836444 87.836445v183.352889a131.982222 131.982222 0 1 1 0 248.604444v183.352889A87.836444 87.836444 0 0 1 759.864889 967.111111H576.853333a131.982222 131.982222 0 1 0-248.775111 0H144.725333A87.836444 87.836444 0 0 1 56.888889 879.047111v-182.499555a131.697778 131.697778 0 1 0 0-248.604445V264.590222a87.836444 87.836444 0 0 1 87.836444-87.836444h183.296A131.811556 131.811556 0 0 1 452.494222 1.080889L452.323556 0z"/>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                    <Setter Property="Foreground" Value="{StaticResource WeUiGreen}"/>
+                                                    <Setter TargetName="ComponentPath" Property="StrokeThickness" Value="0"/>
+                                                </Trigger>
+                                                <Trigger Property="IsChecked" Value="False">
+                                                    <Setter Property="Foreground" Value="Transparent"/>
+                                                    <Setter TargetName="ComponentPath" Property="StrokeThickness" Value="1"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ToggleButton.Style>
+                        <weui:PathButton>
+                            <Path Stretch="Uniform" Data="M0.004 0h438.856v438.856H0.004V0z m0 585.144h438.856V1024H0.004V585.144z m585.144 0H1024.004V1024H585.148V585.144z m219.424-146.288C925.764 438.856 1024.004 340.616 1024.004 219.44 1024.004 98.24 925.764 0 804.572 0 683.388 0 585.148 98.24 585.148 219.432c0 121.184 98.24 219.424 219.424 219.424z"/>
+                        </weui:PathButton>
+                    </ToggleButton>
+                </Grid>
+            </Grid>
+            
+            <!--底部区域-->
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <weui:PathButton Width="15" Background="Transparent" DefaultForeground="#FF909090" MouseOverForeground="#FF9B9B9B" PressedForeground="#FFB8B8B8">
+                        <weui:PathButton.Path>
+                            <Path Stretch="Uniform" Width="14" Height="14" Data="{StaticResource WeUiGeometry_More}"/>
+                        </weui:PathButton.Path>
+                    </weui:PathButton>
+                </Grid>
+                
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Border BorderThickness="0 0 1 0" BorderBrush="#FFD6D6D6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="61"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="#FFF7F7F7">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="12"/>
+                            <ColumnDefinition Width="190"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <weui:SearchBar Grid.Row="1" Grid.Column="1"/>
+                        <weui:PathButton Grid.Row="1" Grid.Column="3" Width="25" Height="25" Foreground="Black" CornerRadius="2"
+                                         DefaultBackground="#FFE2E2E2" MouseOverBackground="#FFD1D1D1" PressedBackground="#FFD1D1D1" >
+                            <weui:PathButton.Path>
+                                <Path Stretch="Uniform" Width="11" Height="11" Data="{StaticResource WeUiGeometry_Plus}"/>
+                            </weui:PathButton.Path>
+                        </weui:PathButton>
+                    </Grid>
+                    <Grid Grid.Row="1" Background="#FFECE9E8">
+                        <ContentControl x:Name="ListRegionContentControl" prism:RegionManager.RegionName="{x:Static utilities:RegionNames.ListRegion}"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="2" Background="#FFF5F5F5">
+            <ContentControl x:Name="DetailContentControl" Margin="0 30 0 0" prism:RegionManager.RegionName="{x:Static utilities:RegionNames.DetailRegion}"  />
+        </Grid>
     </Grid>
 </weui:Window>

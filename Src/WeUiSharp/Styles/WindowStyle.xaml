@@ -6,7 +6,7 @@
                     xmlns:markup="clr-namespace:WeUiSharp.Markup">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Resources/Icons.xaml" />
+        <ResourceDictionary Source="../Resources/Geometries.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
@@ -15,21 +15,23 @@
     <Style x:Key="TopmostNormalStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="TopBtnImage" Source="{StaticResource ICON_TOP_NORMAL}" />
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="TopBtnImage" Property="Source" Value="{StaticResource ICON_TOP_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="TopBtnImage" Property="Source" Value="{StaticResource ICON_TOP_PRESSED}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.TopmostButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.TopmostButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.TopmostButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.TopmostButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.TopmostButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.TopmostButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="8" Height="10" SnapsToDevicePixels="False" Data="{StaticResource WeUiGeometry_Topmost}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
                 </ControlTemplate>
             </Setter.Value>
 
@@ -40,19 +42,30 @@
     <Style x:Key="TopmostStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="TopBtnImage" Source="{StaticResource ICON_TOP}"/>
+                    <Grid x:Name="TopmostBtnGrid">
+                        <controls:PathButton CornerRadius="2" Width="18" Height="18" DefaultBackground="{DynamicResource Window.TopmostButton.MouseOver.Background}" 
+                                         DefaultForeground="{DynamicResource Window.TopmostButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.TopmostButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.TopmostButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.TopmostButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.TopmostButton.Pressed.Background}">
+                            <controls:PathButton.Path>
+                                <Path Stretch="Uniform" Width="8" Height="10" SnapsToDevicePixels="False" Data="{StaticResource WeUiGeometry_Topmost}"/>
+                            </controls:PathButton.Path>
+                        </controls:PathButton>
+                    </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="TopBtnImage" Property="Source" Value="{StaticResource ICON_TOP_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter TargetName="TopmostBtnGrid" Property="Background" Value="{DynamicResource Window.TopmostButton.MouseOver.Background}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="TopBtnImage" Property="Source" Value="{StaticResource ICON_TOP_PRESSED}" />
+                            <Setter TargetName="TopmostBtnGrid" Property="Background" Value="{DynamicResource Window.TopmostButton.Pressed.Background}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -65,22 +78,23 @@
     <Style x:Key="MinimizeStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="MinBtnImage" Source="{StaticResource ICON_MIN}"/>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="MinBtnImage" Property="Source" Value="{StaticResource ICON_MIN_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                           
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="MinBtnImage" Property="Source" Value="{StaticResource ICON_MIN_PRESSED}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.MinButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.MinButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.MinButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.MinButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.MinButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.MinButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="8" Height="8" SnapsToDevicePixels="True" Data="{StaticResource WeUiGeometry_Min}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
                 </ControlTemplate>
             </Setter.Value>
 
@@ -91,22 +105,23 @@
     <Style x:Key="MaximizeStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="MaxBtnImage" Source="{StaticResource ICON_MAX}"/>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="MaxBtnImage" Property="Source" Value="{StaticResource ICON_MAX_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="MaxBtnImage" Property="Source" Value="{StaticResource ICON_MAX_PRESSED}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.MaxButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.MaxButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.MaxButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.MaxButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.MaxButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.MaxButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="7" Height="7" SnapsToDevicePixels="False" Data="{StaticResource WeUiGeometry_Max}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -116,21 +131,23 @@
     <Style x:Key="NormalStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="MaxBtnImage" Source="{StaticResource ICON_NORMAL}"/>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="MaxBtnImage" Property="Source" Value="{StaticResource ICON_NORMAL_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="MaxBtnImage" Property="Source" Value="{StaticResource ICON_NORMAL_PRESSED}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.MaxButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.MaxButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.MaxButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.MaxButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.MaxButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.MaxButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="8" Height="8" SnapsToDevicePixels="True" Data="{StaticResource WeUiGeometry_Normal}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -140,25 +157,24 @@
     <Style x:Key="CloseStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
         <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Image x:Name="CloseBtnImage" Source="{StaticResource ICON_CLOSE}"/>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="CloseBtnImage" Property="Source" Value="{StaticResource ICON_CLOSE_MOUSEOVER}"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="CloseBtnImage" Property="Source" Value="{StaticResource ICON_CLOSE_PRESSED}" />
-                        </Trigger>
-
-                    </ControlTemplate.Triggers>
-
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.CloseButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.CloseButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.CloseButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.CloseButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.CloseButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.CloseButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="7" Height="7" Data="{StaticResource WeUiGeometry_Close}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
                 </ControlTemplate>
-
             </Setter.Value>
         </Setter>
     </Style>
@@ -198,7 +214,7 @@
                                 </VisualBrush>
                             </Border.OpacityMask>
 
-                            <Grid Background="{TemplateBinding Background}">
+                            <Grid >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="30"/>
                                     <RowDefinition/>
@@ -210,7 +226,9 @@
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     ClipContent="True" >
-                                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </Grid>
                                 </controls:ClippingBorder>
 
                                 <!-- 标题 -->

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WeUiSharp.Demo.Views.IntroductionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">WeUiSharp</Label>
+        </Grid>
+        <Grid Grid.Row="2" Margin="20 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="400"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" >
+                <Run>◉ Author：</Run><Hyperlink NavigateUri="https://github.com/IUpdatable/">IUpdatable</Hyperlink>
+                <LineBreak/>
+                <Run>◉ Project：</Run><Hyperlink>https://github.com/IUpdatable/WeUiSharp</Hyperlink>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -4,25 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:WeUiSharp"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    
+
     <ResourceDictionary.MergedDictionaries>
-
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Colors.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Brushes.xaml"/>
-
+        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Resources/Geometries.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/BadgeStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ButtonStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ButtonBaseStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/FieldStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/Geometries.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/IconButtonStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Resources/Icons.xaml"/>
-        
-        <!--<ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/ChromeStyle.xaml"/>-->
-        
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/MoreStyle.xaml"/>
-        
-        <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/AddButtonStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/PathButtonStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/HamburgerMenuItemBaseStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/Styles/MenuItemSeparatorStyle.xaml"/>

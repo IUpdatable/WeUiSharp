@@ -3,8 +3,7 @@
                     xmlns:controls="clr-namespace:WeUiSharp.Controls"
                     xmlns:local="clr-namespace:WeUiSharp.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="Brushes.xaml"/>-->
-        <ResourceDictionary Source="Geometries.xaml"/>
+        <ResourceDictionary Source="../Resources/Geometries.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!--下拉项 样式-->
@@ -30,7 +29,7 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
                             <Border Width="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <Path x:Name="CheckPath" Visibility="Hidden" Data="{StaticResource CheckGeometry}" 
+                                <Path x:Name="CheckPath" Visibility="Hidden" Data="{StaticResource WeUiGeometry_Check}" 
                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                   Width="11" Height="8"
                                   Stretch="UniformToFill" StrokeThickness="0" Fill="{DynamicResource ComboBoxItem.Selected.Tick.Foreground}"/>

@@ -96,7 +96,7 @@
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
     <PackageReference Include="WeUiSharp">
-      <Version>1.0.2</Version>
+      <Version>1.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

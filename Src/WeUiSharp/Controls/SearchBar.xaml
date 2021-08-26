@@ -12,13 +12,6 @@
              xmlns:props="clr-namespace:WeUiSharp.Properties"
              localization:Translation.ResourceManager="{x:Static props:Strings.ResourceManager}"
              >
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <BitmapImage x:Key="ICON_SEARCH" UriSource="../Resources/Icons/Search.png"/>
-            <BitmapImage x:Key="ICON_SEARCH_CLOSE" UriSource="../Resources/Icons/InputClear.png"/>
-            <BitmapImage x:Key="ICON_SEARCH_CLOSE_MOUSEOVER" UriSource="../Resources/Icons/InputClear_MouseOver.png"/>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <Border Name="MainBoarder" CornerRadius="3" Background="{DynamicResource SearchBar.Static.Background}">
         <Grid >
             <Grid.ColumnDefinitions>
@@ -27,7 +20,11 @@
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <local:IconButton Margin="1 1 0 0" Width="16" Height="16" StaticIcon="{StaticResource ICON_SEARCH}"/>
+                <local:PathButton Margin="1 1 0 0" Width="16" Height="16" Focusable="False" Cursor="Arrow" Background="Transparent" Foreground="#FF666666">
+                    <local:PathButton.Path>
+                        <Path Stretch="Uniform" Width="11" Height="11" Data="{StaticResource WeUiGeometry_Search}"/>
+                    </local:PathButton.Path>
+                </local:PathButton>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox x:Name="SearchTextBox"  Style="{x:Null}" Background="Transparent" Margin="0 0 0 2"
@@ -38,13 +35,17 @@
                  Text="{markup:Loc SearchBarText}"
                  GotFocus="SearchTextBox_GotFocus" LostFocus="SearchTextBox_LostFocus"/>
             </Grid>
-            
+            <Grid Grid.Column="2">
+                <local:PathButton x:Name="SearchCloseBtn" Width="14" Height="14" CornerRadius="8" Visibility="Collapsed"
+                                  DefaultBackground="#FFCFCFCF" DefaultForeground="#FF969696"
+                                  MouseOverBackground="#FFC5C5C5" MouseOverForeground="#FF909090"
+                                  PressedBackground="#FFC5C5C5" PressedForeground="#FF919191">
+                    <local:PathButton.Path >
+                        <Path Stretch="Uniform" Width="7" Height="7" Data="{StaticResource WeUiGeometry_Close}"/>
+                    </local:PathButton.Path>
+                </local:PathButton>
+            </Grid>
 
-            <local:IconButton x:Name="SearchCloseBtn" Grid.Column="2" Width="16" Height="16" Visibility="Collapsed"
-                              StaticIcon="{StaticResource ICON_SEARCH_CLOSE}" 
-                              MouseOverIcon="{StaticResource ICON_SEARCH_CLOSE_MOUSEOVER}"/>
-            
-            
         </Grid>
     </Border>
     
