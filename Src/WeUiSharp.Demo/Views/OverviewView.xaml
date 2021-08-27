@@ -10,7 +10,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="10">
         <Grid Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="500"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -35,10 +35,10 @@
                                 <Path Data="{StaticResource WeUiGeometry_AddFriend}"/>
                             </weui:PathButton.Path>
                         </weui:PathButton>
-                        <ToggleButton ToolTip="This is ToggleButton" IsChecked="True" Margin="10 0 0 0"  />
+                        <ToggleButton ToolTip="This is ToggleButton" IsChecked="True" Margin="100 0 0 0"  />
                         <weui:IconButton ToolTip="This is IconButton" Width="25" Height="25" 
                                      StaticIcon="../Resources/Chat.png" MouseOverIcon="../Resources/Chat_MouseOver.png" 
-                                     PressedIcon="../Resources/Chat_Pressed.png" Margin="10 0 0 0"/>
+                                     PressedIcon="../Resources/Chat_Pressed.png" Margin="100 0 0 0"/>
                     </WrapPanel>
                 </StackPanel>
             </Border>
@@ -68,7 +68,7 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18">ComboBox</TextBlock>
                     <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" ItemHeight="50">
-                        <ComboBox Height="30" Width="120">
+                        <ComboBox Height="30" Width="120" >
                             <ComboBoxItem>Option1</ComboBoxItem>
                             <ComboBoxItem  IsSelected="True">Option2</ComboBoxItem>
                             <ComboBoxItem>Option3</ComboBoxItem>
