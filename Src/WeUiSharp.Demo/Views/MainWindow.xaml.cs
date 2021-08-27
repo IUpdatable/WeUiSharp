@@ -26,6 +26,7 @@ namespace WeUiSharp.Demo.Views
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _PreToggleButton = ComponentMenuItem;
+           
         }
 
         // 实现拖拽左侧汉堡菜单移动主窗体

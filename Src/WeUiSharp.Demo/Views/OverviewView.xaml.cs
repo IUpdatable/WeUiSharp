@@ -1,14 +1,22 @@
-﻿using System.Windows.Controls;
+﻿using Prism.Commands;
+using System;
+using System.Windows.Controls;
+using System.Windows.Input;
 using WeUiSharp.Controls;
 using WeUiSharp.Windows;
 
 namespace WeUiSharp.Demo.Views
 {
+    
     /// <summary>
     /// Interaction logic for OverviewView
     /// </summary>
     public partial class OverviewView : UserControl
     {
+        #region [Fields]
+
+        #endregion
+
         public OverviewView()
         {
             InitializeComponent();
@@ -50,11 +58,18 @@ namespace WeUiSharp.Demo.Views
             Toast.Show("Tis is a Toast!", 1);
         }
 
-        private void Alert_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void OnTriggerAlert(object sender, System.Windows.RoutedEventArgs e)
         {
-            AlertWindow alertWindow = new AlertWindow();
-            alertWindow.Message = "This is a AlertWindow!";
-            alertWindow.Show();
+            (System.Windows.Application.Current.MainWindow as WeUiSharp.Windows.Window).TriggerAlertCommand.Execute("Your alert message!");
+        }
+
+        private void OnCancelTriggerAlert(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var window = System.Windows.Application.Current.MainWindow as WeUiSharp.Windows.Window;
+            if (window.IsAlertTriggered)
+            {
+                window.CancelAlertCommand.Execute(null);
+            }
         }
     }
 }

@@ -167,5 +167,14 @@ namespace WeUiSharp.Properties {
                 return ResourceManager.GetString("SystemButtonTopmost", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 你设置了保持窗口在最前，请在主界面取消 的本地化字符串。
+        /// </summary>
+        public static string TopmostTip {
+            get {
+                return ResourceManager.GetString("TopmostTip", resourceCulture);
+            }
+        }
     }
 }

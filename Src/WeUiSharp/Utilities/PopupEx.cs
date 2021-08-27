@@ -11,7 +11,6 @@ namespace WeUiSharp
 {
     /// <summary>
     /// PopupÕÿ’π¿‡
-    /// 
     /// </summary>
     public class PopupEx : Popup
     {

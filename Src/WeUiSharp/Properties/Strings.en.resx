@@ -153,4 +153,7 @@
   <data name="SystemButtonCancelTopmost" xml:space="preserve">
     <value>Sticky on Top cancelled</value>
   </data>
+  <data name="TopmostTip" xml:space="preserve">
+    <value>Window will now remain on top. Cancel this setting via the main menu.</value>
+  </data>
 </root>

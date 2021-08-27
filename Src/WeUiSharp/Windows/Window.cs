@@ -349,10 +349,31 @@ namespace WeUiSharp.Windows
         public string AlertMessage
         {
             get { return (string)GetValue(AlertMessageProperty); }
-            set { SetValue(AlertMessageProperty, value); }
+            set 
+            {
+                SetValue(AlertMessageProperty, value);
+            }
         }
         public static readonly DependencyProperty AlertMessageProperty =
             DependencyProperty.Register(nameof(AlertMessage), typeof(string), typeof(Window), new PropertyMetadata(""));
+
+        /// <summary>
+        /// 是否触发了报警
+        /// </summary>
+        public bool IsAlertTriggered
+        {
+            get
+            {
+                if (_IsInitAlertSuccess && _AlertPopup!= null && _AlertPopup.IsOpen)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         #endregion
 
         #region [命令相关]
@@ -419,7 +440,7 @@ namespace WeUiSharp.Windows
             set { SetValue(TriggerAlertCommandProperty, value); }
         }
         public static readonly DependencyProperty TriggerAlertCommandProperty =
-            DependencyProperty.Register("TriggerAlertCommand", typeof(ICommand), typeof(Window), new PropertyMetadata(null));
+            DependencyProperty.Register(nameof(TriggerAlertCommand), typeof(ICommand), typeof(Window), new PropertyMetadata(null));
         #endregion
 
         #region [CancelAlertCommand] 取消报警命令
@@ -444,6 +465,8 @@ namespace WeUiSharp.Windows
         private CornerRadius _CornerRadius;
         private PopupEx _AlertPopup;
         private Grid _TopCenterAnchor;
+        private bool _IsInitAlertSuccess;
+        
         #endregion
 
         public Window()
@@ -457,6 +480,26 @@ namespace WeUiSharp.Windows
             this.LocationChanged += Window_LocationChanged;
             this.SizeChanged += Window_SizeChanged;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            this.Activated += Window_Activated;
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            if (sender is Window window)
+            {
+                if (_IsInitAlertSuccess && _AlertPopup.IsOpen)
+                {
+                    if (window.IsActive)
+                    {
+                        _AlertPopup.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        _AlertPopup.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
 
         #region [InitChrome] 初始化Chrome
@@ -629,7 +672,7 @@ namespace WeUiSharp.Windows
         {
             if (!this.Topmost)
             {
-                Toast.Show("你设置了保持窗口在最前，请在主界面取消");
+                Toast.Show(Properties.Strings.TopmostTip);
             }
             this.Topmost = !this.Topmost;
         }
@@ -639,13 +682,21 @@ namespace WeUiSharp.Windows
         /// </summary>
         private void TriggerAlert(string message)
         {
-            AlertMessage = message;
-            _AlertPopup.IsOpen = true;
-            UpdateAlertPanelLocation();
+            if (_IsInitAlertSuccess)
+            {
+                AlertMessage = message;
+                _AlertPopup.IsOpen = true;
+                UpdateAlertPanelLocation();
+            }
+            else
+            {
+                throw new Exception("[InitAlert ERROR]: Please use Grid as root node under window!");
+            }
+            
         }
         private bool CanTriggerAlert(string message)
         {
-            return IsAlertTriggered();
+            return this.IsAlertTriggered;
         }
         private void CancelAlert()
         {
@@ -654,7 +705,7 @@ namespace WeUiSharp.Windows
         }
         private bool CanCancelAlert()
         {
-            return IsAlertTriggered();
+            return this.IsAlertTriggered;
         }
         #endregion
 
@@ -667,14 +718,9 @@ namespace WeUiSharp.Windows
             InitCommands();
         }
 
-        //static Window()
-        //{
-        //    DefaultStyleKeyProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata(typeof(Window)));
-        //}
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            InitAlert();
+            _IsInitAlertSuccess = InitAlert();
         }
         private void Window_LocationChanged(object sender, EventArgs e)
         {
@@ -735,7 +781,7 @@ namespace WeUiSharp.Windows
         /// </summary>
         private void UpdateAlertPanelLocation()
         {
-            if (_AlertPopup != null && IsAlertTriggered())
+            if (_IsInitAlertSuccess && _AlertPopup != null && this.IsAlertTriggered)
             {
                 if (this.WindowState == WindowState.Maximized)
                 {
@@ -764,103 +810,113 @@ namespace WeUiSharp.Windows
         /// <summary>
         /// 初始化Alert
         /// </summary>
-        private void InitAlert()
+        private bool InitAlert()
         {
-            //放置一个居中置顶的元素作为锚点，让AlertPopup以此来定位
-            _TopCenterAnchor = new Grid();
-            _TopCenterAnchor.Name = "Anchor";
-            _TopCenterAnchor.Width = 1;
-            _TopCenterAnchor.Height = 1;
-            _TopCenterAnchor.Background = new SolidColorBrush(Colors.Transparent);
-            _TopCenterAnchor.Visibility = Visibility.Hidden;
-            _TopCenterAnchor.IsHitTestVisible = false;
-            _TopCenterAnchor.VerticalAlignment = VerticalAlignment.Top;
-            _TopCenterAnchor.HorizontalAlignment = HorizontalAlignment.Center;
-            if (this.Content is Grid)
+            try
             {
-                (this.Content as Grid).Children.Add(_TopCenterAnchor);
+                if (!(this.Content is Grid))
+                {
+                    // 因为要附加一个锚点，这里需要Window下的根元素必须是Grid
+                    return false;
+                }
+                Grid content = this.Content as Grid;
+
+                //放置一个居中置顶的元素作为锚点，让AlertPopup以此来定位
+                _TopCenterAnchor = new Grid();
+                _TopCenterAnchor.Name = "Anchor";
+                _TopCenterAnchor.Width = 1;
+                _TopCenterAnchor.Height = 1;
+                _TopCenterAnchor.Background = new SolidColorBrush(Colors.Transparent);
+                _TopCenterAnchor.Visibility = Visibility.Hidden;
+                _TopCenterAnchor.IsHitTestVisible = false;
+                _TopCenterAnchor.VerticalAlignment = VerticalAlignment.Top;
+                _TopCenterAnchor.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetColumn(_TopCenterAnchor, 0);
+                Grid.SetColumnSpan(_TopCenterAnchor, 100);
+
+                content.Children.Add(_TopCenterAnchor);
+
+                _AlertPopup = new PopupEx();
+                _AlertPopup.IsOpen = false;
+                _AlertPopup.StaysOpen = true;
+                _AlertPopup.AllowsTransparency = true;
+                _AlertPopup.Height = 34;
+                _AlertPopup.Placement = System.Windows.Controls.Primitives.PlacementMode.Center;
+
+
+                Binding targetBinding = new Binding();
+                targetBinding.Source = _TopCenterAnchor;
+                targetBinding.Path = new PropertyPath(".");
+                _AlertPopup.SetBinding(PopupEx.PlacementTargetProperty, targetBinding);
+
+                Border border = new Border();
+                border.CornerRadius = new CornerRadius(2);
+                border.Background = (Brush)new BrushConverter().ConvertFromString("#CC5353");
+                border.Opacity = 1;
+
+                border.BorderThickness = new Thickness(1);
+                border.BorderBrush = (Brush)new BrushConverter().ConvertFromString("#AE4747");
+
+                Grid grid = new Grid();
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1.0, GridUnitType.Star) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(60) });
+
+                Path path = new Path()
+                {
+                    Width = 11,
+                    Height = 11,
+                    Stretch = Stretch.Uniform,
+                    Data = FindResource("WeUiGeometry_Info") as Geometry
+                };
+                PathButton pathButton = new PathButton()
+                {
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Background = Brushes.Transparent,
+                    Foreground = Brushes.White,
+                    Path = path,
+                    Cursor = Cursors.Arrow,
+                    UseLayoutRounding = true
+                };
+
+                pathButton.Path = path;
+
+                TextBlock textBlock = new TextBlock();
+                textBlock.UseLayoutRounding = true;
+                textBlock.FontSize = 14;
+                textBlock.Foreground = new SolidColorBrush(Colors.White);
+                textBlock.HorizontalAlignment = HorizontalAlignment.Center;
+                textBlock.VerticalAlignment = VerticalAlignment.Center;
+                textBlock.TextAlignment = TextAlignment.Center;
+                textBlock.TextWrapping = TextWrapping.Wrap;
+
+                Binding textBinding = new Binding();
+                textBinding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
+                textBinding.Mode = BindingMode.OneWay;
+                textBinding.Source = this;
+                textBinding.Path = new PropertyPath(nameof(AlertMessage));
+                textBlock.SetBinding(TextBlock.TextProperty, textBinding);
+
+                Grid.SetColumn(pathButton, 1);
+                Grid.SetColumn(textBlock, 2);
+
+                grid.Children.Add(pathButton);
+                grid.Children.Add(textBlock);
+
+                border.Child = grid;
+                _AlertPopup.Child = border;
+                _AlertPopup.IsTopmost = false;
+                return true;
             }
-            else
+            catch (Exception)
             {
-                throw new Exception("[InitAlert ERROR]: Please use grid as root node under window!");
-            }
-
-            _AlertPopup = new PopupEx();
-            _AlertPopup.IsOpen = false;
-            _AlertPopup.StaysOpen = true;
-            _AlertPopup.AllowsTransparency = true;
-            _AlertPopup.Height = 34;
-            _AlertPopup.Placement = System.Windows.Controls.Primitives.PlacementMode.Center;
-
-
-            Binding targetBinding = new Binding();
-            targetBinding.Source = _TopCenterAnchor;
-            targetBinding.Path = new PropertyPath(".");
-            _AlertPopup.SetBinding(PopupEx.PlacementTargetProperty, targetBinding);
-
-
-            Border border = new Border();
-            border.CornerRadius = new CornerRadius(2);
-            border.Background = (Brush)new BrushConverter().ConvertFromString("#CC5353");
-            border.Opacity = 1;
-
-            border.BorderThickness = new Thickness(1);
-            border.BorderBrush = (Brush)new BrushConverter().ConvertFromString("#AE4747");
-
-            Grid grid = new Grid();
-            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30) });
-            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(30) });
-            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1.0, GridUnitType.Star) });
-            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(60) });
-
-            Image icon = new Image();
-            icon.Source = new BitmapImage(new Uri("pack://application:,,,/WeUiSharp;component/Resources/Icons/Info_12px.png"));
-            icon.Width = 12;
-            icon.Height = 12;
-            icon.HorizontalAlignment = HorizontalAlignment.Center;
-            icon.VerticalAlignment = VerticalAlignment.Center;
-
-            TextBlock textBlock = new TextBlock();
-            textBlock.Foreground = new SolidColorBrush(Colors.White);
-            textBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            textBlock.VerticalAlignment = VerticalAlignment.Center;
-            textBlock.TextAlignment = TextAlignment.Center;
-            textBlock.TextWrapping = TextWrapping.Wrap;
-            Binding textBinding = new Binding();
-            textBinding.Source = this;
-            textBinding.Path = new PropertyPath(nameof(AlertMessage));
-            textBlock.SetBinding(TextBlock.TextProperty, textBinding);
-            ScaleTransform scaleTransform = new ScaleTransform(1.16, 1.16);//拉伸文本
-            textBlock.LayoutTransform = scaleTransform;
-
-            Grid.SetColumn(icon, 1);
-            Grid.SetColumn(textBlock, 2);
-
-            grid.Children.Add(icon);
-            grid.Children.Add(textBlock);
-
-            border.Child = grid;
-            _AlertPopup.Child = border;
-            if (this.Content is Grid)
-            {
-                (this.Content as Grid).Children.Add(_AlertPopup);
-            }
-            else
-            {
-                throw new Exception("[InitAlert ERROR]: Please use Grid as root node under window!");
+                return false;
             }
         }
         #endregion
 
-        /// <summary>
-        /// 是否已经触发了Alert
-        /// </summary>
-        /// <returns></returns>
-        public bool IsAlertTriggered()
-        {
-            return _AlertPopup.IsOpen;
-        }
         #endregion
-
     }
 }

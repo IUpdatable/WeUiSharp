@@ -153,4 +153,7 @@
   <data name="SystemButtonCancelTopmost" xml:space="preserve">
     <value>取消置顶</value>
   </data>
+  <data name="TopmostTip" xml:space="preserve">
+    <value>你设置了保持窗口在最前，请在主界面取消</value>
+  </data>
 </root>

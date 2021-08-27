@@ -173,9 +173,6 @@
     <Compile Include="Windows\Window.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Icons\Info_12px.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\Icons\Plugin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
