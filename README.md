@@ -1,5 +1,18 @@
 
-# WeUiSharp
+<p align="center">
+    <h1 align="center">WeUiSharp</h1>
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/license-MIT-green"/>
+    <img alt=".NET Framework Version" src="https://img.shields.io/badge/.NET%20Framework-%3E%3D4.7.2-blue.svg"></img>
+    <a href="https://www.nuget.org/packages/WeUiSharp">
+        <img alt="nuget-version" src="https://img.shields.io/nuget/v/WeUiSharp.svg"></img>
+    </a>
+    <a href="https://www.nuget.org/packages/WeUiSharp">
+        <img alt="Nuget" src="https://img.shields.io/nuget/dt/WeUiSharp"></img>
+    </a> 
+</p>
 
 基于 WPF 实现的仿 Windows 桌面版微信 UI 界面库<br>
 An unofficial UI library for Windows WeChat based on WPF implementation

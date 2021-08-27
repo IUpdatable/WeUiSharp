@@ -111,6 +111,8 @@
                         <Button Click="Alert_Click" Margin="10 0 0 0">Alert</Button>
                     </WrapPanel>
                 </StackPanel>
+                
+                
             </Border>
             
             <Border Grid.Row="7" BorderThickness="1" BorderBrush="#FFD6D6D6" Padding="10" Margin="0 10 0 0">

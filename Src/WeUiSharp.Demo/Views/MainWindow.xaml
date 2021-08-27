@@ -34,8 +34,8 @@
             
             <Grid Grid.Row="1">
                 <!--头像-->
-                <weui:ClippingBorder Background="WhiteSmoke" Width="36" Height="36" CornerRadius="3" Cursor="Hand">
-                    <Image Width="25" Height="36" Source="../Resources/WeUiSharp.png"/>
+                <weui:ClippingBorder Background="White" Width="36" Height="36" CornerRadius="3" Cursor="Hand">
+                    <Image Width="30" Height="30" Source="../Resources/WeUiSharp.png"/>
                 </weui:ClippingBorder>
             </Grid>
             <!--中间区域-->
