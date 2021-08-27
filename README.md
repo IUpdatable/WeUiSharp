@@ -1,7 +1,19 @@
 
 <p align="center">
-    <h1 align="center">WeUiSharp</h1>
+    <h1 align="center" style="border-bottom: none">WeUiSharp</h1>
 </p>
+
+<p  align="center">
+    中文 | <a href="https://github.com/IUpdatable/WeUiSharp/blob/master/README-en.md">English</a>
+</p>
+
+<p align="center">
+    基于 WPF 实现的仿 Windows 桌面版微信 UI 界面库<br>
+An unofficial UI library for Windows WeChat based on WPF implementation
+</p>
+
+
+
 
 <p align="center">
     <img src="https://img.shields.io/badge/license-MIT-green"/>
@@ -14,15 +26,14 @@
     </a> 
 </p>
 
-基于 WPF 实现的仿 Windows 桌面版微信 UI 界面库<br>
-An unofficial UI library for Windows WeChat based on WPF implementation
 
-中文 | [English]()
+## Features
 
+* .NET Framework >= 4.7.2
+* 多语言动态切换
+* 主题动态切换（TODO：深色主题）
+* MIT 协议，开源可商用
 
-## Dependencies
-
-* .NET Framework 4.7.2
 
 ## Overview
 
@@ -92,7 +103,17 @@ public partial class MainWindow
 
 ## Components
 
-TODO
+* Button
+* ToggleButton
+* PathButton
+* IconButton
+* Field
+* CheckBox
+* ComboBox
+* MessageBox
+* ContextMenu
+* Toast
+* Alert
 
 
 
