@@ -4,7 +4,7 @@
 </p>
 
 <p  align="center">
-    中文 | <a href="https://github.com/IUpdatable/WeUiSharp/blob/master/README-en.md">English</a>
+    <a href="https://github.com/IUpdatable/WeUiSharp/blob/master/README.md">中文</a> | English
 </p>
 
 <p align="center">
@@ -30,9 +30,9 @@ An unofficial UI library for Windows WeChat based on WPF implementation
 ## Features
 
 * .NET Framework >= 4.7.2
-* 多语言动态切换
-* 主题动态切换（TODO：深色主题）
-* MIT 协议，开源可商用
+* Multi-language dynamic switching
+* Dynamic theme switching (TODO: dark theme)
+* MIT license, open source and free for commercial use
 
 
 ## Overview
@@ -42,12 +42,12 @@ An unofficial UI library for Windows WeChat based on WPF implementation
 
 ## Getting Started
 
-1. 创建一个基于.NET Framework 4.7.2+ 的WPF项目（推荐使用：[Prism](https://github.com/PrismLibrary/Prism) 框架，直接使用 [Prism模板](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack) 创建项目）；
-2. NuGet 安装 `WeUiSharp`
-3. 修改文件 `App.xaml`，添加以下资源：
+1. Create a WPF project based on .NET Framework 4.7.2+（Recommended Use: [Prism](https://github.com/PrismLibrary/Prism) ，use [Prism Template](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack) create project）；
+2. NuGet install `WeUiSharp`
+3. Modify `App.xaml` and add the following resources:
 ```xml
 <Application.Resources>
-    <!-- 下面部分为添加内容 -->
+    <!-- add part -->
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
             <ResourceDictionary Source="pack://application:,,,/WeUiSharp;component/ControlsResources.xaml"/>
@@ -69,7 +69,7 @@ An unofficial UI library for Windows WeChat based on WPF implementation
     </ResourceDictionary>
 </Application.Resources>
 ```
-4. 修改文件 `MainWindow.xaml`，将 `Window` 改为 `weui:Window`，并添加 `weui` 的引用：
+4. Modify the file `MainWindow.xaml`, change `Window` to `weui:Window`, and add a reference to `weui`: 
 
 ```xml
 <weui:Window xmlns:weui="https://github.com/IUpdatable/WeUiSharp" Title="Hello WeUiSharp"
@@ -82,7 +82,7 @@ An unofficial UI library for Windows WeChat based on WPF implementation
 </weui:Window>
 ```
 
-5. 修改 `MainWindow.xaml.cs`，取消从 Window 的继承关系
+5. Modify `MainWindow.xaml.cs` to cancel the inheritance relationship from `Window`
 
 ```CSharp
 public partial class MainWindow
@@ -93,13 +93,13 @@ public partial class MainWindow
     }
 }
 ```
-6. 编译运行，应该就可以看到下面效果的界面：
+6. Compile and run, you should be able to see the following effect interface: 
 
 ![Hello Wrorld](https://raw.githubusercontent.com/IUpdatable/WeUiSharp/master/Resources/HelloWeUiSharp.png)
 
-完整代码：[WeUiSharp.HelloWorld](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorld)
+Complete code: [WeUiSharp.HelloWorld](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorld)
 
-基于 Prism 框架的 Hello Wrorld 项目完整代码： [WeUiSharp.HelloWorldWithPrism](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorldWithPrism)
+Complete code of Hello Wrorld project based on Prism framework:  [WeUiSharp.HelloWorldWithPrism](https://github.com/IUpdatable/WeUiSharp/tree/master/Src/WeUiSharp.HelloWorldWithPrism)
 
 ## Components
 
@@ -118,9 +118,9 @@ public partial class MainWindow
 
 ## Feedback
 
-* 邮箱：IUpdatable@163.com
+* E-mail: IUpdatable@163.com
 
-* 微信公众号：
+* WeChat Official Account: 
 
 <p align="center">
     <img height="300" src="https://raw.githubusercontent.com/IUpdatable/WeUiSharp/master/Resources/公众号.jpg"/>

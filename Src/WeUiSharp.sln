@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{80
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F2E81CD-3743-4011-B282-260FD5D06D39}"
 	ProjectSection(SolutionItems) = preProject
+		..\README-en.md = ..\README-en.md
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
