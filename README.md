@@ -117,7 +117,7 @@ public partial class MainWindow
 * [Alert](https://github.com/IUpdatable/WeUiSharp/wiki/2.-Components#Alert)
 
 ## Feedback
-
+**PS: 最近在找工作，有工作推荐的也可以联系我。**
 * 邮箱：IUpdatable@163.com
 
 * 微信公众号：

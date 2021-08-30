@@ -115,10 +115,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\IntroductionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,16 +126,12 @@
     <Compile Include="Utilities\RegionNames.cs" />
     <Compile Include="ViewModels\DemoItemListViewModel.cs" />
     <Compile Include="ViewModels\DemoItemViewModel.cs" />
-    <Compile Include="ViewModels\IntroductionViewViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\DemoItemListView.xaml.cs">
       <DependentUpon>DemoItemListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DemoItemView.xaml.cs">
       <DependentUpon>DemoItemView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\IntroductionView.xaml.cs">
-      <DependentUpon>IntroductionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
