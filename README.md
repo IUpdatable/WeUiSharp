@@ -103,6 +103,7 @@ public partial class MainWindow
 
 ## Components
 
+* [Window](https://github.com/IUpdatable/WeUiSharp/wiki/2.-Components#Window)
 * [Button](https://github.com/IUpdatable/WeUiSharp/wiki/2.-Components#Button)
 * [ToggleButton](https://github.com/IUpdatable/WeUiSharp/wiki/2.-Components#ToggleButton)
 * [PathButton](https://github.com/IUpdatable/WeUiSharp/wiki/2.-Components#PathButton)

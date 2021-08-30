@@ -23,7 +23,7 @@ namespace WeUiSharp.Demo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<OverviewView>();
+            
         }
         protected override void Initialize()
         {

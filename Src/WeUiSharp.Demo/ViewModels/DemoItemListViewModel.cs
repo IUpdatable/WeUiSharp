@@ -65,18 +65,33 @@ namespace WeUiSharp.Demo.ViewModels
 
         public void UpdateDetailView()
         {
+            IRegion detailRegion = _RegionManager.Regions[RegionNames.DetailRegion];
             if (_SelectedIndex == 0)
             {
-                IRegion detailRegion = _RegionManager.Regions[RegionNames.DetailRegion];
-                OverviewView overviewView = _ContainerProvider.Resolve<OverviewView>();
-                if (overviewView == null)
+                var view = detailRegion.GetView(nameof(OverviewView));
+                if (view == null)
                 {
-                    detailRegion.Add(overviewView, nameof(OverviewView));
-                    detailRegion.Activate(overviewView);
+                    OverviewView newView = _ContainerProvider.Resolve<OverviewView>();
+                    detailRegion.Add(newView, nameof(OverviewView));
+                    detailRegion.Activate(newView);
                 }
                 else
                 {
-                    detailRegion.Activate(overviewView);
+                    detailRegion.Activate(view);
+                }
+            }
+            else if (_SelectedIndex == 1)
+            {
+                var view = detailRegion.GetView(nameof(WeChatLoginView));
+                if (view == null)
+                {
+                    WeChatLoginView newView = _ContainerProvider.Resolve<WeChatLoginView>();
+                    detailRegion.Add(newView, nameof(WeChatLoginView));
+                    detailRegion.Activate(newView);
+                }
+                else
+                {
+                    detailRegion.Activate(view);
                 }
             }
         }

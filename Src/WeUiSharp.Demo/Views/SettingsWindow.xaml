@@ -1,0 +1,85 @@
+﻿<weui:Window xmlns:weui="https://github.com/IUpdatable/WeUiSharp" 
+             x:Class="WeUiSharp.Demo.Views.SettingsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:props="clr-namespace:WeUiSharp.Demo.Properties"
+             xmlns:markup="clr-namespace:WeUiSharp.Markup;assembly=WeUiSharp"
+             xmlns:localization="clr-namespace:WeUiSharp.Localization;assembly=WeUiSharp"
+             localization:Translation.ResourceManager="{x:Static props:Strings.ResourceManager}"
+             Title="{markup:Loc Settings}" TitleAlign="Left" TitleFontSize="13" FontSize="14" IsResizeEnable="False"
+             Background="WhiteSmoke" IsMaxBtnEnable="False" Width="572" Height="492"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Margin="9 86 0 0">
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="{markup:Loc TextCommonSettings}"  Name="TabItem1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="98"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="71"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 0 0 12" Text="{markup:Loc TextLanguage}"/>
+                        <ComboBox  Grid.Row="0" Grid.Column="1" Width="132" Height="25" HorizontalAlignment="Left" VerticalAlignment="Bottom" SelectedIndex="{Binding LanguageIndex,Mode=TwoWay}" Margin="0 0 0 10">
+                            <ComboBoxItem>简体中文</ComboBoxItem>
+                            <ComboBoxItem>English</ComboBoxItem>
+                            <ComboBoxItem>繁體中文</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{markup:Loc TextOthers}"/>
+                        <CheckBox  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{markup:Loc TextSettingsOption}" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{markup:Loc TextAbout}"  Name="TabItem2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">WeUiSharp</Label>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="20 10 20 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16">
+                            <Run>▪ Author：</Run><Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/IUpdatable/">IUpdatable</Hyperlink>
+                        </TextBlock>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16">
+                            <Run>▪ Project：</Run><Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/IUpdatable/WeUiSharp">https://github.com/IUpdatable/WeUiSharp</Hyperlink>
+                        </TextBlock>
+                        <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16">
+                            <Run>▪ License：MIT</Run>
+                        </TextBlock>
+                        <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                            <TextBlock  Text="▪ Email: " FontSize="16"/>
+                            <TextBlock Text="IUpdatable@163.com" Cursor="Hand" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
+                        </StackPanel>
+                        <TextBlock Text="{markup:Loc TextWechatOfficialAccount}" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                        <Grid Grid.Row="5">
+                            <Image Margin="0 10 0 0" ToolTip="IUpdatable" VerticalAlignment="Top" Width="120" Height="120" Source="../Resources/公众号.jpg"/>
+                        </Grid>
+                        
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</weui:Window>

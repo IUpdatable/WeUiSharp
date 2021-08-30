@@ -8,14 +8,16 @@
              WindowStyle="None"
              SizeToContent="WidthAndHeight"
              AllowsTransparency="True"
-             Opacity="0.575"
+             Background="Transparent"
              WindowStartupLocation="CenterOwner"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border CornerRadius="2" Background="Black" Opacity="1">
-
-        <TextBlock Foreground="{StaticResource BrushText1}"
-                   Margin="10"
+    <Grid>
+        <Border CornerRadius="2" Background="Black" Opacity="0.575">
+        </Border>
+        <TextBlock Foreground="{DynamicResource Toast.Static.Foreground}"
+                   Margin="10"  Opacity="1"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Message}" />
-    </Border>
+    </Grid>
+    
 </Window>

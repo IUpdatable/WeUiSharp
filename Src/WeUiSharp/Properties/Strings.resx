@@ -156,4 +156,7 @@
   <data name="TopmostTip" xml:space="preserve">
     <value>你设置了保持窗口在最前，请在主界面取消</value>
   </data>
+  <data name="SystemButtonSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
 </root>

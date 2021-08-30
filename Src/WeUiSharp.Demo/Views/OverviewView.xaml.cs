@@ -1,8 +1,10 @@
 ﻿using Prism.Commands;
 using System;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Input;
 using WeUiSharp.Controls;
+using WeUiSharp.Demo.Properties;
 using WeUiSharp.Windows;
 
 namespace WeUiSharp.Demo.Views
@@ -60,7 +62,8 @@ namespace WeUiSharp.Demo.Views
 
         private void OnTriggerAlert(object sender, System.Windows.RoutedEventArgs e)
         {
-            (System.Windows.Application.Current.MainWindow as WeUiSharp.Windows.Window).TriggerAlertCommand.Execute("Your alert message!");
+            string alertMessage = Strings.ResourceManager.GetString(nameof(Strings.TextAlertMessage), Thread.CurrentThread.CurrentUICulture);
+            (System.Windows.Application.Current.MainWindow as WeUiSharp.Windows.Window).TriggerAlertCommand.Execute(alertMessage);
         }
 
         private void OnCancelTriggerAlert(object sender, System.Windows.RoutedEventArgs e)

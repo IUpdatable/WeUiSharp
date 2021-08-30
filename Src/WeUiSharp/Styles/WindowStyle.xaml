@@ -11,6 +11,33 @@
     
     <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
 
+    <!--设置按钮样式-->
+    <Style x:Key="SettingsBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="34"/>
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <controls:PathButton CornerRadius="0" DefaultBackground="{DynamicResource Window.SettingsButton.Static.Background}" 
+                                         DefaultForeground="{DynamicResource Window.SettingsButton.Static.Foreground}"
+                                         MouseOverForeground="{DynamicResource Window.SettingsButton.MouseOver.Foreground}"
+                                         MouseOverBackground="{DynamicResource Window.SettingsButton.MouseOver.Background}"
+                                         PressedForeground="{DynamicResource Window.SettingsButton.Pressed.Foreground}"
+                                         PressedBackground="{DynamicResource Window.SettingsButton.Pressed.Background}"
+                                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <controls:PathButton.Path>
+                            <Path Stretch="Uniform" Width="10" Height="10" SnapsToDevicePixels="True" Data="{StaticResource WeUiGeometry_Settings}"/>
+                        </controls:PathButton.Path>
+                    </controls:PathButton>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+    </Style>
+    
     <!--正常置顶按钮样式-->
     <Style x:Key="TopmostNormalStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="34"/>
@@ -243,7 +270,16 @@
                                 <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" 
                                         Margin="0 1 1 0" WindowChrome.IsHitTestVisibleInChrome="True"
                                         VerticalAlignment="Top" >
-
+                                    <Button x:Name="SettingsBtn" ToolTip="{markup:Loc SystemButtonSettings}" 
+                                            Style="{StaticResource SettingsBtnStyle}" 
+                                            Visibility="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsSettingsBtnEnable, Converter={StaticResource VisibleIfTrueConverter}}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SettingsCommand}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Button>
+                                    
                                     <Button x:Name="TopmostBtn" ToolTip="{markup:Loc SystemButtonTopmost}" 
                                             Style="{StaticResource TopmostNormalStyle}" 
                                             Visibility="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsTopmostBtnEnable, Converter={StaticResource VisibleIfTrueConverter}}">

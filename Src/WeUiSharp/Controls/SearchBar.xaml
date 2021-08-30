@@ -22,7 +22,7 @@
             <Grid Grid.Column="0">
                 <local:PathButton Margin="1 1 0 0" Width="16" Height="16" Focusable="False" Cursor="Arrow" Background="Transparent" Foreground="#FF666666">
                     <local:PathButton.Path>
-                        <Path Stretch="Uniform" Width="11" Height="11" Data="{StaticResource WeUiGeometry_Search}"/>
+                        <Path Stretch="Uniform" Width="11" Height="11" Data="{DynamicResource WeUiGeometry_Search}"/>
                     </local:PathButton.Path>
                 </local:PathButton>
             </Grid>

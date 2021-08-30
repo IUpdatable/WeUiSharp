@@ -120,4 +120,43 @@
   <data name="TestText" xml:space="preserve">
     <value>这是一段测试文本。</value>
   </data>
+  <data name="WeChat" xml:space="preserve">
+    <value>微信</value>
+  </data>
+  <data name="ButtonLogin" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="TextSwitchAccount" xml:space="preserve">
+    <value>切换帐号</value>
+  </data>
+  <data name="TextOnlyTransferFiles" xml:space="preserve">
+    <value>仅传输文件</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="TextLanguage" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="TextOthers" xml:space="preserve">
+    <value>其它</value>
+  </data>
+  <data name="TextCommonSettings" xml:space="preserve">
+    <value>通用设置</value>
+  </data>
+  <data name="TextAbout" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="TextMore" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="TextSettingsOption" xml:space="preserve">
+    <value>你的自定义设置选项</value>
+  </data>
+  <data name="TextAlertMessage" xml:space="preserve">
+    <value>你的自定义Alert消息</value>
+  </data>
+  <data name="TextWechatOfficialAccount" xml:space="preserve">
+    <value>▪ 微信公众号：</value>
+  </data>
 </root>

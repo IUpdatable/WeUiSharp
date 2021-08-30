@@ -1,0 +1,40 @@
+﻿<weui:Window xmlns:weui="https://github.com/IUpdatable/WeUiSharp" 
+             x:Class="WeUiSharp.Demo.Views.WeChatLoginWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:props="clr-namespace:WeUiSharp.Demo.Properties"
+             xmlns:markup="clr-namespace:WeUiSharp.Markup;assembly=WeUiSharp"
+             xmlns:localization="clr-namespace:WeUiSharp.Localization;assembly=WeUiSharp"
+             localization:Translation.ResourceManager="{x:Static props:Strings.ResourceManager}"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" CornerRadius="4"
+             xmlns:prism="http://prismlibrary.com/" Title="{markup:Loc WeChat}" TitleAlign="Left" TitleFontSize="13"
+             IsTopmostBtnEnable="False" IsMinBtnEnable="False" IsMaxBtnEnable="False" IsResizeEnable="False"
+             Width="302" Height="422" WindowStartupLocation="CenterScreen" IsSettingsBtnEnable="True" FontSize="14"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="102"/>
+            <RowDefinition Height="92"/>
+            <RowDefinition Height="66"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <weui:ClippingBorder Width="92" Height="92" CornerRadius="3" Cursor="Hand">
+                <Image Width="92" Height="92" Stretch="Uniform" Source="../Resources/WeUiSharp.png"/>
+            </weui:ClippingBorder>
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock Text="WeUiSharp" Foreground="#FF878787" Margin="0 10 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <weui:Button Height="40" Width="210" HorizontalAlignment="Center" GreenType="All" Content="{markup:Loc ButtonLogin}"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <StackPanel Orientation="Horizontal" Margin="0 0 2 0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="{markup:Loc TextSwitchAccount}" Cursor="Hand" Foreground="#FF436895"></TextBlock>
+                <TextBlock Text="|" FontSize="11" Foreground="#FFE2E2E2" Margin="16 0 16 0" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="{markup:Loc TextOnlyTransferFiles}" Cursor="Hand" Foreground="#FF436895"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</weui:Window>

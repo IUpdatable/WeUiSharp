@@ -160,6 +160,15 @@ namespace WeUiSharp.Properties {
         }
         
         /// <summary>
+        ///   查找类似 设置 的本地化字符串。
+        /// </summary>
+        public static string SystemButtonSettings {
+            get {
+                return ResourceManager.GetString("SystemButtonSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 置顶 的本地化字符串。
         /// </summary>
         public static string SystemButtonTopmost {

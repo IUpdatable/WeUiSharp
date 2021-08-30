@@ -7,6 +7,13 @@ using Prism.Regions;
 using Prism.Ioc;
 using WeUiSharp.Demo.Utilities;
 using WeUiSharp.Demo.Views;
+using System.Windows.Controls;
+using System.Collections.Generic;
+using WeUiSharp.Windows;
+using WeUiSharp.Demo.Properties;
+using System.Threading;
+using WeUiSharp.Localization;
+using System.ComponentModel;
 
 namespace WeUiSharp.Demo.ViewModels
 {
@@ -18,6 +25,8 @@ namespace WeUiSharp.Demo.ViewModels
         private ICommand _LoadedCommand;
         private IRegionManager _RegionManager;
         private IContainerProvider _ContainerProvider;
+        private ICommand _MenuItemCommand;
+        private List<MenuItem> _MenuItems;
         #endregion
 
         #region [Properites]
@@ -51,6 +60,7 @@ namespace WeUiSharp.Demo.ViewModels
                 return _LoadedCommand;
             }
         }
+        public List<MenuItem> MenuItems { get => _MenuItems; }
         #endregion
 
 
@@ -114,13 +124,66 @@ namespace WeUiSharp.Demo.ViewModels
         {
             if (sender is MainWindow mainWindow)
             {
-                // 默认选中第一个 Overview 项
+                // default: select Overview 
                 mainWindow.ComponentMenuItem.IsChecked = true;
 
                 IRegion listRegion = _RegionManager.Regions[RegionNames.ListRegion];
                 DemoItemListView demoItemListView = _ContainerProvider.Resolve<DemoItemListView>();
                 listRegion.Add(demoItemListView, nameof(DemoItemListView));
                 listRegion.Activate(demoItemListView);
+
+                InitContextMenu();
+                TranslationSource.Instance.PropertyChanged += TranslationInstance_PropertyChanged;
+            }
+        }
+
+        private void TranslationInstance_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            InitContextMenu();
+        }
+
+        private void InitContextMenu()
+        {
+            _MenuItemCommand = new DelegateCommand<object>(OnClickMenuItem);
+            _MenuItems = new List<MenuItem>();
+            var menuItem1 = new MenuItem()
+            {
+                Header = "Item1",
+                Command = _MenuItemCommand
+            };
+            menuItem1.CommandParameter = menuItem1;
+            var menuItem2 = new MenuItem()
+            {
+                Header = "Item2",
+                Command = _MenuItemCommand
+            };
+            menuItem2.CommandParameter = menuItem2;
+            var menuItem3 = new MenuItem()
+            {
+                Header = Strings.ResourceManager.GetString(nameof(Strings.Settings), Thread.CurrentThread.CurrentUICulture),
+                Command = _MenuItemCommand
+            };
+            menuItem3.CommandParameter = menuItem3;
+
+            _MenuItems.Add(menuItem1);
+            _MenuItems.Add(menuItem2);
+            _MenuItems.Add(menuItem3);
+        }
+
+        private void OnClickMenuItem(object obj)
+        {
+            if (obj is MenuItem menuItem)
+            {
+                string settingsStr = Strings.ResourceManager.GetString(nameof(Strings.Settings), Thread.CurrentThread.CurrentUICulture);
+                if (menuItem.Header.Equals(settingsStr))
+                {
+                    SettingsWindow settingsWindow = new SettingsWindow();
+                    settingsWindow.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("You clicked " + menuItem.Header, "ContextMenu");
+                }
             }
         }
     }

@@ -155,8 +155,14 @@
     <SolidColorBrush x:Key="Window.TopmostButton.MouseOver.Background"  Color="{StaticResource ColorBgLight2}" />
     <SolidColorBrush x:Key="Window.TopmostButton.Pressed.Foreground"    Color="{StaticResource ColorForeground4}" />
     <SolidColorBrush x:Key="Window.TopmostButton.Pressed.Background"    Color="{StaticResource ColorBgLight11}" />
-    
-    
+
+    <SolidColorBrush x:Key="Window.SettingsButton.Static.Foreground"     Color="{StaticResource ColorForeground7}" />
+    <SolidColorBrush x:Key="Window.SettingsButton.Static.Background"     Color="Transparent" />
+    <SolidColorBrush x:Key="Window.SettingsButton.MouseOver.Foreground"  Color="{StaticResource ColorForeground8}" />
+    <SolidColorBrush x:Key="Window.SettingsButton.MouseOver.Background"  Color="{StaticResource ColorBgLight2}" />
+    <SolidColorBrush x:Key="Window.SettingsButton.Pressed.Foreground"    Color="{StaticResource ColorForeground4}" />
+    <SolidColorBrush x:Key="Window.SettingsButton.Pressed.Background"    Color="{StaticResource ColorBgLight11}" />
+
     <!-- Button Resources -->
     <SolidColorBrush x:Key="Button.Static.Background"       Color="{StaticResource ColorWhite}" />
     <SolidColorBrush x:Key="Button.Static.Foreground"       Color="{StaticResource ColorText0}" />
@@ -288,7 +294,9 @@
     <!-- ScrollBar -->
     <SolidColorBrush x:Key="ScrollBarThumb.Static.Background"       Color="{StaticResource ColorBgLight5}"/>
     <SolidColorBrush x:Key="ScrollBarThumb.MouseOver.Background"    Color="{StaticResource ColorBgLight4}"/>
-    
+
+    <!-- Toast -->
+    <SolidColorBrush x:Key="Toast.Static.Foreground"       Color="{StaticResource ColorWhite}"/>
     
     <!--<Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}" BasedOn="{StaticResource HighVisibilityFocusVisual}" />-->
     

@@ -120,4 +120,43 @@
   <data name="TestText" xml:space="preserve">
     <value>This is a test text.</value>
   </data>
+  <data name="WeChat" xml:space="preserve">
+    <value>WeChat</value>
+  </data>
+  <data name="ButtonLogin" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="TextSwitchAccount" xml:space="preserve">
+    <value>Switch Account</value>
+  </data>
+  <data name="TextOnlyTransferFiles" xml:space="preserve">
+    <value>Only Transfer Files</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TextLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="TextOthers" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="TextCommonSettings" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="TextAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="TextMore" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="TextSettingsOption" xml:space="preserve">
+    <value>Your custom setting option</value>
+  </data>
+  <data name="TextAlertMessage" xml:space="preserve">
+    <value>Your custom Alert message</value>
+  </data>
+  <data name="TextWechatOfficialAccount" xml:space="preserve">
+    <value>▪ WeChat Official Account:</value>
+  </data>
 </root>

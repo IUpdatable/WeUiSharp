@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace WeUiSharp.Demo.ViewModels
 {
-    public class YourCustomViewViewModel : BindableBase
+    public class YourCustomViewModel : BindableBase
     {
-        public YourCustomViewViewModel()
+        public YourCustomViewModel()
         {
 
         }

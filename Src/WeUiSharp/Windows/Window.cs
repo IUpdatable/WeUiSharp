@@ -287,6 +287,19 @@ namespace WeUiSharp.Windows
 
         #region [系统按钮相关]
 
+        #region [IsSettingsBtnEnable] 是否启用设置按钮
+        /// <summary>
+        /// 是否启用设置按钮
+        /// </summary>
+        public bool IsSettingsBtnEnable
+        {
+            get { return (bool)GetValue(IsSettingsBtnEnableProperty); }
+            set { SetValue(IsSettingsBtnEnableProperty, value); }
+        }
+        public static readonly DependencyProperty IsSettingsBtnEnableProperty =
+            DependencyProperty.Register(nameof(IsSettingsBtnEnable), typeof(bool), typeof(Window), new PropertyMetadata(false));
+        #endregion
+
         #region [IsTopMostBtnEnable] 是否启用置顶按钮
         /// <summary>
         /// 是否启用置顶按钮
@@ -297,7 +310,7 @@ namespace WeUiSharp.Windows
             set { SetValue(IsTopmostBtnEnableProperty, value); }
         }
         public static readonly DependencyProperty IsTopmostBtnEnableProperty =
-            DependencyProperty.Register("IsTopmostBtnEnable", typeof(bool), typeof(Window), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsTopmostBtnEnable), typeof(bool), typeof(Window), new PropertyMetadata(false));
         #endregion
 
         #region [IsMinBtnEnable] 是否启用最小化按钮
@@ -310,7 +323,7 @@ namespace WeUiSharp.Windows
             set { SetValue(IsMinBtnEnableProperty, value); }
         }
         public static readonly DependencyProperty IsMinBtnEnableProperty =
-            DependencyProperty.Register("IsMinBtnEnable", typeof(bool), typeof(Window), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsMinBtnEnable), typeof(bool), typeof(Window), new PropertyMetadata(true));
         #endregion
 
         #region [IsMaxBtnEnable] 是否启用最大化按钮
@@ -323,7 +336,7 @@ namespace WeUiSharp.Windows
             set { SetValue(IsIsMaxBtnEnableProperty, value); }
         }
         public static readonly DependencyProperty IsIsMaxBtnEnableProperty =
-            DependencyProperty.Register("IsMaxBtnEnable", typeof(bool), typeof(Window), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsMaxBtnEnable), typeof(bool), typeof(Window), new PropertyMetadata(true));
         #endregion
 
         #region [IsCloseBtnEnable] 是否启用关闭按钮
@@ -336,7 +349,7 @@ namespace WeUiSharp.Windows
             set { SetValue(IsCloseBtnEnableProperty, value); }
         }
         public static readonly DependencyProperty IsCloseBtnEnableProperty =
-            DependencyProperty.Register("IsCloseBtnEnable", typeof(bool), typeof(Window), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsCloseBtnEnable), typeof(bool), typeof(Window), new PropertyMetadata(true));
         #endregion
 
         #endregion
@@ -428,6 +441,19 @@ namespace WeUiSharp.Windows
         }
         internal static readonly DependencyProperty TopmostCommandProperty =
             DependencyProperty.Register("TopmostCommand", typeof(ICommand), typeof(Window), new PropertyMetadata(null));
+        #endregion
+
+        #region [SettingsCommand] 设置命令
+        /// <summary>
+        /// 置顶命令
+        /// </summary>
+        internal ICommand SettingsCommand
+        {
+            get { return (ICommand)GetValue(SettingsCommandProperty); }
+            set { SetValue(SettingsCommandProperty, value); }
+        }
+        internal static readonly DependencyProperty SettingsCommandProperty =
+            DependencyProperty.Register(nameof(SettingsCommand), typeof(ICommand), typeof(Window), new PropertyMetadata(null));
         #endregion
 
         #region [TriggerAlertCommand] 触发报警命令

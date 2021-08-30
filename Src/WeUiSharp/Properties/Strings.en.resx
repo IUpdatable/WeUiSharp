@@ -156,4 +156,7 @@
   <data name="TopmostTip" xml:space="preserve">
     <value>Window will now remain on top. Cancel this setting via the main menu.</value>
   </data>
+  <data name="SystemButtonSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

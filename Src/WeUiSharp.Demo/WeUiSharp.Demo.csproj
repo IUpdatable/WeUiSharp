@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WeUiSharp.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,7 +82,10 @@
     <Compile Include="ViewModels\MyCustomDetailViewModel.cs" />
     <Compile Include="ViewModels\MyCustomListViewModel.cs" />
     <Compile Include="ViewModels\OverviewViewModel.cs" />
-    <Compile Include="ViewModels\YourCustomViewViewModel.cs" />
+    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
+    <Compile Include="ViewModels\WeChatLoginViewModel.cs" />
+    <Compile Include="ViewModels\WeChatLoginWindowViewModel.cs" />
+    <Compile Include="ViewModels\YourCustomViewModel.cs" />
     <Compile Include="Views\MyCustomDetailView.xaml.cs">
       <DependentUpon>MyCustomDetailView.xaml</DependentUpon>
     </Compile>
@@ -88,6 +94,15 @@
     </Compile>
     <Compile Include="Views\OverviewView.xaml.cs">
       <DependentUpon>OverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeChatLoginView.xaml.cs">
+      <DependentUpon>WeChatLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeChatLoginWindow.xaml.cs">
+      <DependentUpon>WeChatLoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\YourCustomView.xaml.cs">
       <DependentUpon>YourCustomView.xaml</DependentUpon>
@@ -139,6 +154,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OverviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeChatLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeChatLoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +234,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Chat_Pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\公众号.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WeUiSharp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WeUiSharp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
